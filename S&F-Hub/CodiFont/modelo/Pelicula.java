@@ -1,5 +1,11 @@
 package modelo;
 
-public class Pelicula {
+public class Pelicula extends Contenido {
+
+	public Pelicula(String nombre, String genero){
+		super(nombre, genero);
+		
+		
+	}
 
 }
