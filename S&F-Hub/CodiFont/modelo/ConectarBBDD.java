@@ -1,18 +1,24 @@
 package modelo;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class ConectarBBDD {
 
 	// Atributos
-
 	private String url_BDD;
 	private String usuario;
 	private String contraseña;
 	private String consulta;
 
 	// Constructores
-
+	public ConectarBBDD() {
+		
+	}
+	
 	public ConectarBBDD(String url_BDD, String usuario, String contraseña, String consulta) {
-
 		this.url_BDD = url_BDD;
 		this.usuario = usuario;
 		this.contraseña = contraseña;
@@ -20,7 +26,6 @@ public class ConectarBBDD {
 	}
 
 	// Getters & Setters
-
 	public String getUrl_BDD() {
 		return url_BDD;
 	}
@@ -54,9 +59,18 @@ public class ConectarBBDD {
 	}
 
 	// Metodos
-
-	public void leerConsulta() {
-
+	public void connectar() {
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103:80/bd_s&fhub","root","12345678");
+		
+			Statement  s = conexion.createStatement();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

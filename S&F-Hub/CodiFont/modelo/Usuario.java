@@ -4,84 +4,84 @@ public class Usuario {
 
 	// Atributos
 
-	private String Nombre;
-	private String Apellidos;
-	private String Email;
-	private String Contraseña;
-	private int Edad;
-	private boolean Politicaprovacidad;
-	private boolean Publicidad;
+	private String nombre;
+	private String apellidos;
+	private String email;
+	private String contraseña;
+	private int edad;
+	private boolean politicaprovacidad;
+	private boolean publicidad;
 
 	// Constructores
 
 	public Usuario(String nombre, String apellidos, String email, String contraseña, int edad,
 			boolean politicaprovacidad, boolean publicidad) {
 
-		Nombre = nombre;
-		Apellidos = apellidos;
-		Email = email;
-		Contraseña = contraseña;
-		Edad = edad;
-		Politicaprovacidad = politicaprovacidad;
-		Publicidad = publicidad;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+		this.contraseña = contraseña;
+		this.edad = edad;
+		this.politicaprovacidad = politicaprovacidad;
+		this.publicidad = publicidad;
 	}
 
 	// Getters & Setters
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public String getApellidos() {
-		return Apellidos;
+		return apellidos;
 	}
 
 	public void setApellidos(String apellidos) {
-		Apellidos = apellidos;
+		this.apellidos = apellidos;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getContraseña() {
-		return Contraseña;
+		return contraseña;
 	}
 
 	public void setContraseña(String contraseña) {
-		Contraseña = contraseña;
+		this.contraseña = contraseña;
 	}
 
 	public int getEdad() {
-		return Edad;
+		return edad;
 	}
 
 	public void setEdad(int edad) {
-		Edad = edad;
+		this.edad = edad;
 	}
 
 	public boolean isPoliticaprovacidad() {
-		return Politicaprovacidad;
+		return politicaprovacidad;
 	}
 
 	public void setPoliticaprovacidad(boolean politicaprovacidad) {
-		Politicaprovacidad = politicaprovacidad;
+		this.politicaprovacidad = politicaprovacidad;
 	}
 
 	public boolean isPublicidad() {
-		return Publicidad;
+		return publicidad;
 	}
 
 	public void setPublicidad(boolean publicidad) {
-		Publicidad = publicidad;
+		this.publicidad = publicidad;
 	}
 
 	// Metodos

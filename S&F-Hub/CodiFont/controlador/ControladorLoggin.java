@@ -38,13 +38,16 @@ public class ControladorLoggin implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//Evento botones
 //		btnRegistrarse.setOnAction((event) -> registrarse(event));
-		btnRegistrarse.setOnMouseReleased((event) -> registrarse(event));
+		btnRegistrarse.setOnMouseClicked((event) -> registrarse(event));
+	
 	}
 	
 	//Metodos
 	private void registrarse(MouseEvent event){
 		try {
-	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Registrarse.fxml"));
+			String fxml = "vista/Registrarse.fxml";
+			
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
 	       
 	        Parent root = loader.load();
 	        
@@ -55,10 +58,15 @@ public class ControladorLoggin implements Initializable{
 	        
 	        stage.initModality(Modality.APPLICATION_MODAL);
 	        stage.setScene(scene);
+	        
+	        stage.show();
+	        
 	        stage.showAndWait();
+	        
 	    } catch(Exception e) {
 	        e.printStackTrace();
 	    }
 	}
+	
 
 }
