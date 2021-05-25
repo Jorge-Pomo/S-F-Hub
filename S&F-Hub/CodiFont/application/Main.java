@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 
 		try {
-			String fxml = "vista/SFHub.fxml";
+			String fxml = "vista/Loggin.fxml";
 
 			// Cargar la ventana
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
