@@ -118,27 +118,23 @@ public class ControladorRegistrarse implements Initializable {
 
 		//Comprobar datos
 		System.out.println(comprobarEmail() + " " + comprobarContraseña());
-
+		System.out.println(checkPrivacidad.isSelected());
+		
 		//Conexion BBDD
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103:80/bd_s&fhub", "root",
-					"12345678");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar", "12345678");
 
 			Statement s = conexion.createStatement();
 
-			// ResultSet rs = s.executeQuery ("INSERT INTO usuario VALUES (DEFAULT, "+
-			// txtUser + ", "+ txtContra + ", "+ checkPublicidad + ", "+ checkPrivacidad +
-			// ", " + txtTelef + ", " + txtEmail +")");
-
-			ResultSet rs = s.executeQuery("SELECT * FROM usuario");
-
-			while (rs.next()) {
-
-				System.out.println(rs.getString(1));
-
-			}
-
+			CharSequence contra1 = txtContra.getCharacters();
+			String contraseña = contra1.toString();
+			
+			int rs = s.executeUpdate("INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`, `telf`, `e-mail`) VALUES ('" + txtUser.getText() + "','" + contraseña + "','" + checkPublicidad.isSelected() + "','" + checkPrivacidad.isSelected() + "','" + txtTelef.getText() + "','" + txtEmail.getText() + "')" );
+			
+			//ResultSet res = s.executeQuery("Select * FROM usuario");
+			
+			
 			conexion.close();
 		} catch (Exception e) {
 			e.printStackTrace();

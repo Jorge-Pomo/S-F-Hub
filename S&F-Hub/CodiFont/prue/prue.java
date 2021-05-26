@@ -10,7 +10,7 @@ public class prue {
 	public static void main(String[] args) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection("jdbc:mysql://54.235.194.103;database=bd_s&fhub;user=root;password=12345678");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar", "12345678");
 			System.out.println("si");
 			Statement  s = conexion.createStatement();
 			
