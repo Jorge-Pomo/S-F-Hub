@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorRegistrarse">
    <children>
       <AnchorPane prefHeight="575.0" prefWidth="662.0">
          <children>
@@ -22,25 +22,25 @@
                   <Font name="Baskerville Old Face" size="25.0" />
                </font>
             </Label>
-            <Label id="lblNuwvoUsuario" layoutX="144.0" layoutY="165.0" prefHeight="27.0" prefWidth="130.0" text="Nuevo Usuario">
+            <Label fx:id="lblNuwvoUsuario" layoutX="144.0" layoutY="165.0" prefHeight="27.0" prefWidth="130.0" text="Nuevo Usuario">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label id="lblContraseña" layoutX="144.0" layoutY="327.0" prefHeight="26.0" prefWidth="105.0" text="Contraseña">
+            <Label fx:id="lblContraseña" layoutX="144.0" layoutY="327.0" prefHeight="26.0" prefWidth="105.0" text="Contraseña">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField id="txtUser" layoutX="342.0" layoutY="166.0" text="User" />
-            <TextField id="txtEmail" layoutX="342.0" layoutY="221.0" text="E-Mail" />
-            <TextField id="txtTelef" layoutX="342.0" layoutY="275.0" text="Telefono" />
-            <PasswordField id="txtContra" layoutX="342.0" layoutY="328.0" />
+            <TextField fx:id="txtUser" layoutX="342.0" layoutY="166.0" text="User" />
+            <TextField fx:id="txtEmail" layoutX="342.0" layoutY="221.0" text="E-Mail" />
+            <TextField fx:id="txtTelef" layoutX="342.0" layoutY="275.0" text="Telefono" />
+            <PasswordField fx:id="txtContra" layoutX="342.0" layoutY="328.0" />
             <Label layoutX="342.0" layoutY="363.0" prefHeight="13.0" prefWidth="149.0" text="Repetir Contraseña" />
-            <PasswordField id="txtRepetirContra" layoutX="342.0" layoutY="389.0" />
-            <CheckBox  id="checkPublicidad" layoutX="342.0" layoutY="438.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="130.0" text="Acepto publicidad" />
-            <CheckBox id="checkPrivacidad" layoutX="342.0" layoutY="469.0" mnemonicParsing="false" text="Politica de privacidad" />
-            <Button id="btnRegistrarse" layoutX="139.0" layoutY="422.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="149.0" text="Registrarse" />
+            <PasswordField fx:id="txtRepetirContra" layoutX="342.0" layoutY="389.0" />
+            <CheckBox  fx:id="checkPublicidad" layoutX="342.0" layoutY="438.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="130.0" text="Acepto publicidad" />
+            <CheckBox fx:id="checkPrivacidad" layoutX="342.0" layoutY="469.0" mnemonicParsing="false" text="Politica de privacidad" />
+            <Button fx:id="btnRegistrarse" layoutX="139.0" layoutY="422.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="149.0" text="Registrarse" />
          </children>
       </AnchorPane>
    </children>

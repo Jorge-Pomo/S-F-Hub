@@ -1,19 +1,18 @@
 package application;
 
 import javafx.application.Application;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.BorderPane;
-import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 
 public class Main extends Application {
 
 	public void start(Stage primaryStage) {
 
 		try {
-			String fxml = "vista/Registrarse.fxml";
+			String fxml = "vista/Loggin.fxml";
 
 			// Cargar la ventana
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
@@ -25,7 +24,7 @@ public class Main extends Application {
 			primaryStage.getIcons().add(new Image(getClass().getResource("/vista/img/Captura.png").toExternalForm()));
 
 			// Asignar propiedades al Stage
-			primaryStage.setTitle("S&Fhub");
+			primaryStage.setTitle("S&Fhub -- Loggin");
 			primaryStage.setResizable(false);
 
 			// Asignar la scene y mostrar
