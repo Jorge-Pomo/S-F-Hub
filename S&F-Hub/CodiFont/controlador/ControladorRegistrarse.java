@@ -35,6 +35,10 @@ public class ControladorRegistrarse implements Initializable {
 	@FXML private CheckBox checkPrivacidad;
 	@FXML private Button btnRegistrarse;
 
+	/**
+	 * <h2>Configuración del Boton "Registrarse"</h2>
+	 * anidamos el boton al metodo registrarse
+	 * */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -42,6 +46,22 @@ public class ControladorRegistrarse implements Initializable {
 
 	}
 
+	/**
+	 * <h2>Comprobamos el campo del E-amil</h2>
+	 * 
+	 * @param resu resultado que devolverá el metodo
+	 * @param email variable donde se guardara el e-mail
+	 * 
+	 * Si el email contiene un "@" y un "." sera correcto.
+	 * 
+	 * @see Email
+	 * 
+	 * @return
+	 * <ul>
+	 * 	<li>El email es correcto</li>
+	 * 	<li>El email es incorrecto</li>
+	 * </ul>
+	 * */
 	private boolean comprobarEmail() {
 
 		boolean resu = false;
@@ -55,60 +75,91 @@ public class ControladorRegistrarse implements Initializable {
 		return resu;
 	}
 
+	
+	/**
+	 * <h2>Comprobamos el campo Contraseña</h2>
+	 * 
+	 * @param resu resultado que devolverá el metodo
+	 * @param contra1 campo "contraseña"
+	 * @param contraRep campo "Repetri Contraseña"
+	 * 
+	 * @see CharSequence creamos un array de caracteres con la contraseña
+	 * 
+	 * @see .toString convertimos la cadena de caracteres a String para poder comparar los 2 campos
+	 * 
+	 * @return
+	 * <ul>
+	 * 	<li>Son iguales</li>
+	 * 	<li>No son iguales</li>
+	 * </ul>
+	 * */
 	private boolean comprobarContraseña() {
 		boolean resu = false;
-		
+
 		CharSequence contra1 = txtContra.getCharacters();
 		CharSequence contraRep = txtRepetirContra.getCharacters();
-		
-		if(contra1.toString().equals(contraRep.toString())) {
+
+		if (contra1.toString().equals(contraRep.toString())) {
 			resu = true;
 		}
-		
+
 		return resu;
 	}
-	
+
+	/**
+	 * <h2>Registramos al usuario en la BBDD</h2>
+	 * 
+	 * @param Connection Iniciamos la conexion con la BBDD, indicando el tipo, la URL, usuario y contraseña
+	 * @param 
+	 * 
+	 * Volvemos a la ventana de Login para poder iniciar sesion con el usuario ya creado y almacenado en la BBDD
+	 * */
 	public void registrar() {
-		
+
+		//Comprobar datos
 		System.out.println(comprobarEmail() + " " + comprobarContraseña());
-		
+
+		//Conexion BBDD
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103:80/bd_s&fhub","root","12345678");
-		
-			Statement  s = conexion.createStatement();
-			
-			//ResultSet rs = s.executeQuery ("INSERT INTO usuario VALUES (DEFAULT, "+ txtUser + ", "+ txtContra + ", "+ checkPublicidad + ", "+ checkPrivacidad + ", " + txtTelef + ", " + txtEmail +")");
-			
-			ResultSet rs = s.executeQuery ("SELECT * FROM usuario");
-			
-			while (rs.next()){
-				
-				System.out.println (rs.getString(1));
-				
-				}
-			
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103:80/bd_s&fhub", "root",
+					"12345678");
+
+			Statement s = conexion.createStatement();
+
+			// ResultSet rs = s.executeQuery ("INSERT INTO usuario VALUES (DEFAULT, "+
+			// txtUser + ", "+ txtContra + ", "+ checkPublicidad + ", "+ checkPrivacidad +
+			// ", " + txtTelef + ", " + txtEmail +")");
+
+			ResultSet rs = s.executeQuery("SELECT * FROM usuario");
+
+			while (rs.next()) {
+
+				System.out.println(rs.getString(1));
+
+			}
+
 			conexion.close();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
+		//Vlver ventana Loggin
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
 
 			Parent root = loader.load();
-			Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow(); 
+			Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow();
 
 			stage.setTitle("S&F Hub -- Loggin");
 			stage.setScene(new Scene(root));
 			stage.show();
 
-
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }
