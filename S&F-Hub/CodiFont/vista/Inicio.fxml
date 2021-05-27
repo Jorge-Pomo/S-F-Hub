@@ -1,82 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ComboBox layoutX="47.0" layoutY="42.0" prefWidth="150.0" />
-      <Label layoutX="309.0" layoutY="46.0" text="INICIO" />
-      <TextField fx:id="txtBuscarSerie" layoutX="430.0" layoutY="42.0" text="Busca tu serie" />
-      <ScrollBar layoutX="612.0" layoutY="42.0" orientation="VERTICAL" prefHeight="439.0" prefWidth="19.0" />
-      <Label layoutX="34.0" layoutY="94.0" prefHeight="17.0" prefWidth="48.0" text="Mi Lista" />
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="41.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="172.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="302.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="430.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="41.0" layoutY="217.0" prefHeight="17.0" prefWidth="116.0" text="Favoritas del publico" />
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="48.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="179.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="309.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="437.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="35.0" layoutY="341.0" prefHeight="17.0" prefWidth="48.0" text="Thriller" />
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="42.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="173.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="303.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="107.0" layoutX="431.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Bob'sBurguer.jpg" />
-         </image>
-      </ImageView>
+      <AnchorPane layoutX="-20.0" layoutY="141.0" prefHeight="687.0" prefWidth="909.0">
+         <children>
+            <ScrollBar layoutX="791.0" orientation="VERTICAL" prefHeight="687.0" prefWidth="14.0" visible="false" />
+            <Button layoutX="85.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="250.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="415.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <ScrollBar layoutX="51.0" layoutY="163.0" prefHeight="14.0" prefWidth="858.0" />
+            <Button layoutX="581.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="749.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="85.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="250.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="415.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <ScrollBar layoutX="51.0" layoutY="343.0" prefHeight="14.0" prefWidth="858.0" />
+            <Button layoutX="581.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="749.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="85.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="250.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="415.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <ScrollBar layoutX="51.0" layoutY="516.0" prefHeight="14.0" prefWidth="858.0" />
+            <Button layoutX="581.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button layoutX="749.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+         </children></AnchorPane>
+      <ComboBox fx:id="cbSPM" layoutX="67.0" layoutY="87.0" opacity="0.77" prefHeight="25.0" prefWidth="198.0" promptText="Series, peliculas, Mi Lista" />
+      <Label alignment="CENTER" layoutX="307.0" layoutY="28.0" prefHeight="51.0" prefWidth="185.0" text="S&amp;F Hub">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBuscarSerie" layoutX="564.0" layoutY="87.0" prefHeight="25.0" prefWidth="172.0" promptText="Buscar Serie" />
+      <Button fx:id="btnBuscarSerie" layoutX="700.0" layoutY="87.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" />
    </children>
 </AnchorPane>

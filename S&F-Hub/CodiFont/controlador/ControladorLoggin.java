@@ -79,7 +79,7 @@ public class ControladorLoggin implements Initializable {
 				conexion.close();
 
 				// Ir ventana PyS
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PyS.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Inicio.fxml"));
 
 				Parent root = loader.load();
 				Stage stage = (Stage) this.btnIniciarSesion.getScene().getWindow();
