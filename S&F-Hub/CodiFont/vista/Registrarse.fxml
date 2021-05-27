@@ -38,9 +38,14 @@
             <PasswordField fx:id="txtContra" layoutX="342.0" layoutY="328.0" />
             <Label layoutX="342.0" layoutY="363.0" prefHeight="13.0" prefWidth="149.0" text="Repetir Contraseña" />
             <PasswordField fx:id="txtRepetirContra" layoutX="342.0" layoutY="389.0" />
-            <CheckBox  fx:id="checkPublicidad" layoutX="342.0" layoutY="438.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="130.0" text="Acepto publicidad" />
+            <CheckBox fx:id="checkPublicidad" layoutX="342.0" layoutY="438.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="130.0" text="Acepto publicidad" />
             <CheckBox fx:id="checkPrivacidad" layoutX="342.0" layoutY="469.0" mnemonicParsing="false" text="Politica de privacidad" />
             <Button fx:id="btnRegistrarse" layoutX="139.0" layoutY="422.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="149.0" text="Registrarse" />
+            <Label fx:id="lblError" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="144.0" layoutY="514.0" prefHeight="46.0" prefWidth="340.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

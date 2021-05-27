@@ -48,7 +48,6 @@ public class ControladorLoggin implements Initializable {
 	 * @param stage.stTitle insertamos el titulo de la pagina
 	 * */
 	private void registrarse() {
-
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Registrarse.fxml"));
