@@ -180,28 +180,23 @@ public class ControladorRegistrarse implements Initializable {
 					} else {
 						// Conexion BBDD
 						try {
-							// Class.forName("com.mysql.cj.jdbc.Driver");
-							// Connection conexion =
-							// DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub",
-							// "Conectar",
-							// "12345678");
-							//
-							// Statement s = conexion.createStatement();
-							//
-							// CharSequence contra1 = txtContra.getCharacters();
-							// String contraseña = contra1.toString();
-							//
-							// int rs = s.executeUpdate(
-							// "INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`,
-							// `telf`, `Email`) VALUES ('"
-							// + txtUser.getText() + "','" + contraseña + "','" +
-							// checkPublicidad.isSelected() + "','"
-							// + checkPrivacidad.isSelected() + "','" + txtTelef.getText() + "','" +
-							// txtEmail.getText()
-							// + "')");
-							//
-							// // Cerramos Conexion
-							// conexion.close();
+							Class.forName("com.mysql.cj.jdbc.Driver");
+							Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub",
+									"Conectar", "12345678");
+
+							Statement s = conexion.createStatement();
+
+							CharSequence contra1 = txtContra.getCharacters();
+							String contraseña = contra1.toString();
+
+							int rs = s.executeUpdate(
+									"INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`, `telf`, `Email`) VALUES ('"
+											+ txtUser.getText() + "','" + contraseña + "','"
+											+ checkPublicidad.isSelected() + "','" + checkPrivacidad.isSelected()
+											+ "','" + txtTelef.getText() + "','" + txtEmail.getText() + "')");
+
+							// Cerramos Conexion
+							conexion.close();
 
 						} catch (Exception e) {
 							e.printStackTrace();
