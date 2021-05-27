@@ -16,12 +16,12 @@ body {
 
 .contenedor {
 	width: 90%;
-
-	text-align: right;
+	margin: auto;
 }
 
 header {
 	padding: 30px 0;
+    color: aliceblue;
 }
 
 header .contenedor {
@@ -34,8 +34,7 @@ header .logotipo {
 	font-family: 'Bebas Neue', cursive;
 	font-weight: normal;
 	color: var(--rojo);
-	font-size: 90px;
-	text-align: center;
+	font-size: 40px;
 }
 
 header nav a {
@@ -49,19 +48,28 @@ header nav a.activo {
 	color: #FFF;
 }
 
-
 /* ---- ----- ----- Pelicula Principal ----- ----- ----- */
 .pelicula-principal {
 	font-size: 16px;
 	min-height: 40.62em;
 	color: #fff;
-	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(../img/portada.jpg);
+	
 	background-position: center center;
 	background-size: cover;
 	margin-bottom: 3.12em;
 	display: flex;
 	align-items: end;
 }
+
+
+.pelicula-principal5 {
+	
+	color: white;
+	
+	
+}
+
+
 
 .pelicula-principal .contenedor {
 	margin: 0 auto;
@@ -123,108 +131,3 @@ header nav a.activo {
 		max-width: 100%;
 	}
 }
-
-/*---- ---- -----FORMULARIO----- ---- ------ */
-
-html{
-    background-color: #3c3838;
-}
-
-body{
-    background-color: transparent;
-}
-
-#log-in-form{
-    margin: 230px auto 0;
-    padding: 10px;
-    color: white;
-    height: auto;
-    max-width: 800px;
-    background-image: url("formulario2.jpg");
-    background-size: cover;
-}
-
-#log-in-form .heading{
-	text-align: center;
-    margin-top: 50px;
-    margin-bottom: 70px;
-}
-
-#log-in-form .form-group{
-    float: left;
-    width: 28%;
-    margin-left: 40px;
-}
-
-#log-in-form .form-control{
-    padding: 15px 25px;
-    height: auto;
-}
-
-#log-in-form .form-group-btn{
-    width: 15%;
-    margin-left: 70px;
-}
-
-#log-in-form .btn{
-    padding: 13px 32px;
-}
-
-#log-in-form .checkbox{
-    float: left;
-    margin: 15px 0 50px 40px;
-}
-
-
-@media screen and (max-width: 800px){
-    #log-in-form{
-        margin: 20px;
-    }
-
-    #log-in-form .form-group{
-        width: 60%;
-        float: none;
-        margin: 10px auto;
-    }
-
-    #log-in-form .form-group-btn{
-        margin-top: 30px;
-    }
-
-    #log-in-form .btn{
-        width: 100%;
-    }
-
-    #log-in-form .checkbox{
-        width: 60%;
-        float: none;
-        margin: 15px auto 50px auto;
-    }
-}
-
-@media screen and (max-width: 600px){
-    #log-in-form .form-group,
-    #log-in-form .checkbox{
-        width: 90%;
-    }
-}
-
-
-/*-------BOTON------*/
-a{
-  border-radius: 5px;
-  padding: 10px 7px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #333;
-  margin: 5px;
-}
-/*-----Ajuste de tamaño de la pagina----*/
-
-<style>
-@media (max-width: 600px) {
-  .facet_sidebar {
-    display: none;
-  }
-}
-</style>
