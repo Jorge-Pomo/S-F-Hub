@@ -30,8 +30,8 @@ public class ControladorLoggin implements Initializable {
 	@FXML private Label lblError;
 
 	/**
-	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> Anidamos
-	 * cada boton con su metodo
+	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> 
+	 * <p>Anidamos cada boton con su metodo</p>
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -40,6 +40,20 @@ public class ControladorLoggin implements Initializable {
 		this.btnIniciarSesion.setOnMouseClicked((event) -> iniciarSesion());
 	}
 
+	/**
+	 * <h2>Boton de iniciarSesion</h2>
+	 * 
+	 * @param contra1 array que contiene la contraseña
+	 * @param contraseña passamos contra1 a String i lo guardamos en contraseña
+	 * 
+	 * <p>Nos conectamos a la BBDD</p>
+	 * 
+	 * @param rs
+	 * <ul>
+	 * 	<li>Error, el usuario o contraseña no son validos</li>
+	 *	<li>Cerramos la conexion y nos vamos a la pestaña de Inicio</li>
+	 * </ul>
+	 * */
 	// Metodos
 	private void iniciarSesion() {
 

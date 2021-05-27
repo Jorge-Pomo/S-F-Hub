@@ -159,8 +159,8 @@ public class ControladorRegistrarse implements Initializable {
 	 * @param contraseña Guardamos la contraseña en tipo String
 	 * @param rs         Insertamos datos de registro
 	 * 
-	 *                   Volvemos a la ventana de Login para poder iniciar sesion
-	 *                   con el usuario ya creado y almacenado en la BBDD
+	 *                  <p> Volvemos a la ventana de Login para poder iniciar sesion
+	 *                   con el usuario ya creado y almacenado en la BBDD</p>
 	 */
 	public void registrar() {
 
