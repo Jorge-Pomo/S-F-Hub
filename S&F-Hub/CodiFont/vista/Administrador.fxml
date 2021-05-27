@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorAdministrador">
    <children>
-      <Label layoutX="154.0" layoutY="50.0" text="Version Administrador">
+      <Label layoutX="277.0" layoutY="131.0" text="Version Administrador">
          <font>
             <Font name="Bookman Old Style" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="256.0" layoutY="130.0" text="Usuario">
+      <Label layoutX="379.0" layoutY="211.0" text="Usuario">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="242.0" layoutY="262.0" text="Contraseña">
+      <Label layoutX="365.0" layoutY="343.0" text="Contraseña">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="100.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="139.0" layoutX="58.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Captura.PNG" />
          </image>
       </ImageView>
-      <TextField layoutX="199.0" layoutY="173.0" prefHeight="27.0" prefWidth="176.0" />
-      <TextField layoutX="199.0" layoutY="305.0" prefHeight="27.0" prefWidth="176.0" />
+      <TextField fx:id="txtUsuario" layoutX="322.0" layoutY="254.0" prefHeight="27.0" prefWidth="176.0" />
+      <PasswordField fx:id="txtContraseña" layoutX="322.0" layoutY="400.0" prefHeight="27.0" prefWidth="176.0" />
+      <Button fx:id="btnIniciar" layoutX="349.0" layoutY="463.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" text="Iniciar Sesion">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblError" alignment="CENTER" layoutX="322.0" layoutY="530.0" prefHeight="38.0" prefWidth="176.0" />
    </children>
 </AnchorPane>
