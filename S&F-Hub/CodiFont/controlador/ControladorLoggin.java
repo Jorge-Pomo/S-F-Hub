@@ -1,6 +1,10 @@
 package controlador;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,43 +21,86 @@ import javafx.stage.Stage;
 public class ControladorLoggin implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML private Label lblUsuario;
-	@FXML private TextField txtUsuario;
-	@FXML private Label lblContraseña;
-	@FXML private PasswordField passwordContraseña;
-	@FXML private Button btnIniciarSesion;
-	@FXML private Button btnRegistrarse;
+	@FXML
+	private Label lblUsuario;
+	@FXML
+	private TextField txtUsuario;
+	@FXML
+	private Label lblContraseña;
+	@FXML
+	private PasswordField passwordContraseña;
+	@FXML
+	private Button btnIniciarSesion;
+	@FXML
+	private Button btnRegistrarse;
+	@FXML
+	private Label lblError;
 
 	/**
-	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2>
-	 * Anidamos cada boton con su metodo
-	 * */
+	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> Anidamos
+	 * cada boton con su metodo
+	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 		this.btnRegistrarse.setOnMouseClicked((event) -> registrarse());
 		this.btnIniciarSesion.setOnMouseClicked((event) -> iniciarSesion());
-
 	}
 
 	// Metodos
 	private void iniciarSesion() {
 
+		CharSequence contra1 = passwordContraseña.getCharacters();
+		String contraseña = contra1.toString();
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
+					"12345678");
+
+			Statement s = conexion.createStatement();
+
+			ResultSet rs = s.executeQuery("SELECT nombre, contraseña FROM `usuario` WHERE nombre = '"
+					+ txtUsuario.getText() + "' AND contraseña = '" + contraseña + "'");
+
+			//Si no hay datos guardados en rs, no se habra podido hacer la consulta
+			if (!rs.isBeforeFirst()) {
+				lblError.setText("El usuario o la contraseña no son validos");
+				
+			} else {
+				// Cerramos Conexion
+				conexion.close();
+
+				// Ir ventana PyS
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PyS.fxml"));
+
+				Parent root = loader.load();
+				Stage stage = (Stage) this.btnIniciarSesion.getScene().getWindow();
+
+				stage.setTitle("S&F Hub -- Registrarse");
+				stage.setScene(new Scene(root));
+				stage.show();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	/**
-	 * @param loader especificamos done se encuentra la ventana a cargar
-	 * @param root cargamos la ventana
-	 * @param stage indicamos la funcionalidad del boton, en este caso que no abra otr ventana
+	 * @param loader        especificamos done se encuentra la ventana a cargar
+	 * @param root          cargamos la ventana
+	 * @param stage         indicamos la funcionalidad del boton, en este caso que
+	 *                      no abra otr ventana
 	 * @param stage.stTitle insertamos el titulo de la pagina
-	 * */
+	 */
 	private void registrarse() {
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Registrarse.fxml"));
 
 			Parent root = loader.load();
-			Stage stage = (Stage) this.btnIniciarSesion.getScene().getWindow();
+			Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow();
 
 			stage.setTitle("S&F Hub -- Registrarse");
 			stage.setScene(new Scene(root));
