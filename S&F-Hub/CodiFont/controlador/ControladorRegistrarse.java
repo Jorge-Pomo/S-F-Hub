@@ -35,7 +35,7 @@ public class ControladorRegistrarse implements Initializable {
 	@FXML private CheckBox checkPrivacidad;
 	@FXML private Button btnRegistrarse;
 	@FXML private Label lblError;
-
+	
 	/**
 	 * <h2>Configuración del Boton "Registrarse"</h2> anidamos el boton al metodo
 	 * registrarse
@@ -107,85 +107,47 @@ public class ControladorRegistrarse implements Initializable {
 		return resu;
 	}
 
-	//REGISTRO
-	
-	/**
-	 * <h2>Comprobamos que el usuario ya esta registrado</h2>
-	 * 
-	 * @param Connection      Iniciamos la conexion con la BBDD
-	 * @param Statment   Iniciamos Conexion
-	 * 
-	 * @param rs         Insertamos datos de registro
-	 * 
-	 * 						Comprobamos que el usuario ya se encuentra en la Base
-	 * 						de Datos
-	 * 
-	 */
-	
 	public boolean comprobarRegistro() {
-
-		boolean resu = true;
-
-		try {
-
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
-					"12345678");
-
-			Statement s = conexion.createStatement();
-			ResultSet rs = s.executeQuery("SELECT Email FROM usuario WHERE Email = '"+txtEmail.getText()+"'");
-
-			if (rs.next()) {
-				resu = false;
-			}
-
-		} catch (Exception e) {
-
-		}
-
+		boolean resu = false;
+		
+		
+		
 		return resu;
 	}
-
+	
 	/**
 	 * <h2>Registramos al usuario en la BBDD</h2>
 	 * 
-	 * @param Connection Iniciamos la conexion con la BBDD, indicando el tipo, la
-	 *                   URL, usuario y contraseña
-	 * @param Statment   Iniciamos Conexion
+	 * @param Connection Iniciamos la conexion con la BBDD, indicando el tipo, la URL, usuario y contraseña
+	 * @param Statment Iniciamos Conexion
 	 * @param contraseña Guardamos la contraseña en tipo String
-	 * @param rs         Insertamos datos de registro
+	 * @param rs Insertamos datos de registro
 	 * 
-	 *                   Volvemos a la ventana de Login para poder iniciar sesion
-	 *                   con el usuario ya creado y almacenado en la BBDD
-	 */
+	 * Volvemos a la ventana de Login para poder iniciar sesion con el usuario ya creado y almacenado en la BBDD
+	 * */
 	public void registrar() {
 
-		if (comprobarRegistro() && comprobarEmail() && comprobarContraseña()) {
-			// Conexion BBDD
+		if(comprobarRegistro() && comprobarEmail() && comprobarContraseña()) {
+			//Conexion BBDD
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
-						"12345678");
+				Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar", "12345678");
 
 				Statement s = conexion.createStatement();
 
 				CharSequence contra1 = txtContra.getCharacters();
 				String contraseña = contra1.toString();
 
-				int rs = s.executeUpdate(
-						"INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`, `telf`, `Email`) VALUES ('"
-								+ txtUser.getText() + "','" + contraseña + "','" + checkPublicidad.isSelected() + "','"
-								+ checkPrivacidad.isSelected() + "','" + txtTelef.getText() + "','" + txtEmail.getText()
-								+ "')");
-
-				// Cerramos Conexion
+				int rs = s.executeUpdate("INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`, `telf`, `e-mail`) VALUES ('" + txtUser.getText() + "','" + contraseña + "','" + checkPublicidad.isSelected() + "','" + checkPrivacidad.isSelected() + "','" + txtTelef.getText() + "','" + txtEmail.getText() + "')" );
+				
+				//Cerramos Conexion
 				conexion.close();
-
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			// Volver ventana Loggin
+			//Volver ventana Loggin
 			try {
 
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
@@ -200,36 +162,20 @@ public class ControladorRegistrarse implements Initializable {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else {
-			
-			if (txtUser.getText().equals("") || txtEmail.getText().equals("") || txtTelef.getText().equals("")
-					|| txtContra.getText().equals("") || txtRepetirContra.getText().equals("")) {
-
-				lblError.setText("Hay campos vacios");
-
-				}
-			
-			if (comprobarRegistro() == false) {
-
-			lblError.setText("El usuario ya existe");
-
-		}
-			if (comprobarEmail() == false) {
-
-				lblError.setText("El Email no es correcto");
-
+		}else {
+			if(comprobarRegistro() == false) {
+				
 			}
-
-			if (comprobarContraseña() == false) {
-
-				lblError.setText("La contraseña no coincide");
-
+			if(comprobarEmail() == false) {
+				
 			}
-
-			
-
+			if(comprobarContraseña() == false) {
+				
+			}
 		}
 
+		
+		
 	}
 
 }
