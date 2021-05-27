@@ -28,7 +28,7 @@
       </Label>
       <ImageView fitHeight="100.0" fitWidth="139.0" layoutX="58.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Captura.PNG" />
+            <Image url="@img/Captura.PNG" />
          </image>
       </ImageView>
       <TextField fx:id="txtUsuario" layoutX="322.0" layoutY="254.0" prefHeight="27.0" prefWidth="176.0" />
