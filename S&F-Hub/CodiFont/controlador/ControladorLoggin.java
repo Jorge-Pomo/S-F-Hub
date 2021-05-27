@@ -21,20 +21,13 @@ import javafx.stage.Stage;
 public class ControladorLoggin implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML
-	private Label lblUsuario;
-	@FXML
-	private TextField txtUsuario;
-	@FXML
-	private Label lblContraseña;
-	@FXML
-	private PasswordField passwordContraseña;
-	@FXML
-	private Button btnIniciarSesion;
-	@FXML
-	private Button btnRegistrarse;
-	@FXML
-	private Label lblError;
+	@FXML private Label lblUsuario;
+	@FXML private TextField txtUsuario;
+	@FXML private Label lblContraseña;
+	@FXML private PasswordField passwordContraseña;
+	@FXML private Button btnIniciarSesion;
+	@FXML private Button btnRegistrarse;
+	@FXML private Label lblError;
 
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> Anidamos
@@ -63,10 +56,10 @@ public class ControladorLoggin implements Initializable {
 			ResultSet rs = s.executeQuery("SELECT nombre, contraseña FROM `usuario` WHERE nombre = '"
 					+ txtUsuario.getText() + "' AND contraseña = '" + contraseña + "'");
 
-			//Si no hay datos guardados en rs, no se habra podido hacer la consulta
+			// Si no hay datos guardados en rs, no se habra podido hacer la consulta
 			if (!rs.isBeforeFirst()) {
 				lblError.setText("El usuario o la contraseña no son validos");
-				
+
 			} else {
 				// Cerramos Conexion
 				conexion.close();

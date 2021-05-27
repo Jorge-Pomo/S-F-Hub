@@ -100,28 +100,32 @@ public class ControladorRegistrarse implements Initializable {
 		CharSequence contra1 = txtContra.getCharacters();
 		CharSequence contraRep = txtRepetirContra.getCharacters();
 
-		if (contra1.toString().equals(contraRep.toString())) {
-			resu = true;
+		if (contra1.toString().equals("")) {
+			resu = false;
+		} else {
+			if (contra1.toString().equals(contraRep.toString())) {
+				resu = true;
+			}
 		}
 
 		return resu;
 	}
 
-	//REGISTRO
-	
+	// REGISTRO
+
 	/**
 	 * <h2>Comprobamos que el usuario ya esta registrado</h2>
 	 * 
-	 * @param Connection      Iniciamos la conexion con la BBDD
+	 * @param Connection Iniciamos la conexion con la BBDD
 	 * @param Statment   Iniciamos Conexion
 	 * 
 	 * @param rs         Insertamos datos de registro
 	 * 
-	 * 						Comprobamos que el usuario ya se encuentra en la Base
-	 * 						de Datos
+	 *                   Comprobamos que el usuario ya se encuentra en la Base de
+	 *                   Datos
 	 * 
 	 */
-	
+
 	public boolean comprobarRegistro() {
 
 		boolean resu = true;
@@ -133,7 +137,7 @@ public class ControladorRegistrarse implements Initializable {
 					"12345678");
 
 			Statement s = conexion.createStatement();
-			ResultSet rs = s.executeQuery("SELECT Email FROM usuario WHERE Email = '"+txtEmail.getText()+"'");
+			ResultSet rs = s.executeQuery("SELECT Email FROM usuario WHERE Email = '" + txtEmail.getText() + "'");
 
 			if (rs.next()) {
 				resu = false;
@@ -160,74 +164,67 @@ public class ControladorRegistrarse implements Initializable {
 	 */
 	public void registrar() {
 
-		if (comprobarRegistro() && comprobarEmail() && comprobarContraseña()) {
-			// Conexion BBDD
-			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
-						"12345678");
+		if (txtUser.getText().equals("") || txtEmail.getText().equals("") || txtTelef.getText().equals("")
+				|| txtContra.getText().equals("") || txtRepetirContra.getText().equals("")) {
 
-				Statement s = conexion.createStatement();
-
-				CharSequence contra1 = txtContra.getCharacters();
-				String contraseña = contra1.toString();
-
-				int rs = s.executeUpdate(
-						"INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`, `telf`, `Email`) VALUES ('"
-								+ txtUser.getText() + "','" + contraseña + "','" + checkPublicidad.isSelected() + "','"
-								+ checkPrivacidad.isSelected() + "','" + txtTelef.getText() + "','" + txtEmail.getText()
-								+ "')");
-
-				// Cerramos Conexion
-				conexion.close();
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-			// Volver ventana Loggin
-			try {
-
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
-
-				Parent root = loader.load();
-				Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow();
-
-				stage.setTitle("S&F Hub -- Loggin");
-				stage.setScene(new Scene(root));
-				stage.show();
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			lblError.setText("Hay campos vacios");
 		} else {
-			
-			if (txtUser.getText().equals("") || txtEmail.getText().equals("") || txtTelef.getText().equals("")
-					|| txtContra.getText().equals("") || txtRepetirContra.getText().equals("")) {
-
-				lblError.setText("Hay campos vacios");
-
-				}
-			
 			if (comprobarRegistro() == false) {
+				lblError.setText("El usuario ya existe");
+			} else {
+				if (comprobarEmail() == false) {
+					lblError.setText("El Email no es correcto");
+				} else {
+					if (comprobarContraseña() == false) {
+						lblError.setText("La contraseña no coincide");
+					} else {
+						// Conexion BBDD
+						try {
+							// Class.forName("com.mysql.cj.jdbc.Driver");
+							// Connection conexion =
+							// DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub",
+							// "Conectar",
+							// "12345678");
+							//
+							// Statement s = conexion.createStatement();
+							//
+							// CharSequence contra1 = txtContra.getCharacters();
+							// String contraseña = contra1.toString();
+							//
+							// int rs = s.executeUpdate(
+							// "INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`,
+							// `telf`, `Email`) VALUES ('"
+							// + txtUser.getText() + "','" + contraseña + "','" +
+							// checkPublicidad.isSelected() + "','"
+							// + checkPrivacidad.isSelected() + "','" + txtTelef.getText() + "','" +
+							// txtEmail.getText()
+							// + "')");
+							//
+							// // Cerramos Conexion
+							// conexion.close();
 
-			lblError.setText("El usuario ya existe");
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
 
-		}
-			if (comprobarEmail() == false) {
+						// Volver ventana Loggin
+						try {
 
-				lblError.setText("El Email no es correcto");
+							FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
 
+							Parent root = loader.load();
+							Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow();
+
+							stage.setTitle("S&F Hub -- Loggin");
+							stage.setScene(new Scene(root));
+							stage.show();
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				}
 			}
-
-			if (comprobarContraseña() == false) {
-
-				lblError.setText("La contraseña no coincide");
-
-			}
-
-			
-
 		}
 
 	}
