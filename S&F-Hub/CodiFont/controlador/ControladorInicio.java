@@ -47,6 +47,12 @@ public class ControladorInicio implements Initializable {
 	private Button btnSyP14;
 	@FXML
 	private Button btnSyP15;
+	@FXML
+	private Button btnLista;
+	@FXML
+	private Button btnAyuda;
+	
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -66,6 +72,9 @@ public class ControladorInicio implements Initializable {
 		btnSyP13.setOnMouseClicked((event) -> buscarSerie());
 		btnSyP14.setOnMouseClicked((event) -> buscarSerie());
 		btnSyP15.setOnMouseClicked((event) -> buscarSerie());
+		btnLista.setOnMouseClicked((event) -> crearLista());
+		btnAyuda.setOnMouseClicked((event) -> soporteTecnico());
+
 
 	}
 
@@ -91,6 +100,7 @@ public class ControladorInicio implements Initializable {
 			Stage stage13 = (Stage) this.btnSyP13.getScene().getWindow();
 			Stage stage14 = (Stage) this.btnSyP14.getScene().getWindow();
 			Stage stage15 = (Stage) this.btnSyP15.getScene().getWindow();
+			
 
 			stage.setTitle("S&F Hub -- Serie");
 			stage.setScene(new Scene(root));
@@ -99,6 +109,44 @@ public class ControladorInicio implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+		
+		private void crearLista() {
+
+			try {
+
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/MiLista.fxml"));
+
+				Parent root = loader.load();
+				Stage stage = (Stage) this.btnLista.getScene().getWindow();
+				
+
+				stage.setTitle("S&F Hub -- Lista");
+				stage.setScene(new Scene(root));
+				stage.show();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		
+		}
+			private void soporteTecnico() {
+
+				try {
+
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/SoporteTc.fxml"));
+
+					Parent root = loader.load();
+					Stage stage = (Stage) this.btnAyuda.getScene().getWindow();
+					
+
+					stage.setTitle("S&F Hub -- Ayuda");
+					stage.setScene(new Scene(root));
+					stage.show();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 
 	}
 

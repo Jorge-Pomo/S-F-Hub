@@ -16,14 +16,14 @@ public class ControladorPyS implements Initializable {
 
 	
 	@FXML
-	private Button Volver;
+	private Button btnVolver;
 	
 	
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		Volver.setOnMouseClicked((event) -> Atras());
+		btnVolver.setOnMouseClicked((event) -> Atras());
 		
 	}
 	
@@ -31,10 +31,10 @@ public class ControladorPyS implements Initializable {
 		
 		try {
 		
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Inicio.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Inicio2.fxml"));
 
 		Parent root = loader.load();
-		Stage stage = (Stage) this.Volver.getScene().getWindow();
+		Stage stage = (Stage) this.btnVolver.getScene().getWindow();
 		
 
 		stage.setTitle("S&F Hub -- Serie");

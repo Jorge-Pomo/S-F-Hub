@@ -70,6 +70,6 @@
             <Image url="@../../../../moviestar.png" />
          </image>
       </ImageView>
-      <Button fx:id="Volver" layoutX="690.0" layoutY="40.0" mnemonicParsing="false" text="Volver" />
+      <Button fx:id="btnVolver" layoutX="690.0" layoutY="40.0" mnemonicParsing="false" text="Volver" />
    </children>
 </AnchorPane>
