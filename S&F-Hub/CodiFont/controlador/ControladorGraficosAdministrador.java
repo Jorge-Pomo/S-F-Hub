@@ -23,15 +23,12 @@ import javafx.scene.control.Label;
 public class ControladorGraficosAdministrador implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML
-	private LineChart grfNuevosUsuarios;
+	@FXML private LineChart grfNuevosUsuarios;
+	@FXML private BarChart grfSeresBuscadas;
 
-	@FXML
-	private BarChart grfSeresBuscadas;
+	@FXML private Label lblError;
 
-	@FXML
-	private Label lblError;
-
+	// Array usuarios diarios
 	int dia[] = { 0, 0, 0, 0, 0, 0, 0 };
 
 	@Override
@@ -45,7 +42,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 
 			Statement s = conexion.createStatement();
 			ResultSet rs = s
-					.executeQuery("SELECT Fecha, COUNT(Fecha) FROM usuario GROUP BY Fecha ORDER BY Fecha DESC LIMIT 7");
+					.executeQuery("SELECT Fecha, COUNT(Fecha) FROM usuario GROUP BY Fecha ORDER BY Fecha ASC LIMIT 7");
 
 			int i = 0;
 
@@ -68,7 +65,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 
 		//Datos Dias
 		XYChart.Series<String, Number> dias1 = new XYChart.Series<>();
-		dias1.setName("nombre Serie");
+		dias1.setName("Nombre Serie");
 		dias1.getData().addAll(
 				new XYChart.Data<>("Dia 1", dia[0]),
 				new XYChart.Data<>("Dia 2", dia[1]),
