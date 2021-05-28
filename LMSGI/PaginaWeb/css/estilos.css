@@ -34,7 +34,7 @@ header .logotipo {
 	font-family: 'Bebas Neue', cursive;
 	font-weight: normal;
 	color: var(--rojo);
-	font-size: 40px;
+	font-size: 60px;
 }
 
 header nav a {
@@ -74,6 +74,7 @@ header nav a.activo {
 .pelicula-principal .contenedor {
 	margin: 0 auto;
 	margin-bottom: 6.25em;
+	text-align: right;
 }
 
 .pelicula-principal .titulo {

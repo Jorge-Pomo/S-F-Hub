@@ -42,9 +42,24 @@ header .logotipo {
 	font-weight: normal;
 	color: var(--rojo);
 	font-size: 60px;
-	text-align: right;}
+	text-align: right;
+}
+.menu{
+font-size: medium;
+color: darkred;
+margin-bottom: 30px;
+height: 0.5px;
+margin-top: 20px;
+
+}	
 	
-	
+.menu2{
+font-size: medium;
+color: darkred;
+margin-top: 44px;
+margin-bottom: 30px;
+
+}
 
 header nav a {
 	color: #AAA;
@@ -256,6 +271,8 @@ header nav a.activo {
 		display: none;
 	}
 }
+
+/*----Derechos de autor S&F Hub------*/
 #footer .inner .copyright li {
 				border-left: solid 2px rgba(255, 255, 255, 0.125);
 				color: rgba(255, 255, 255, 0.35);
@@ -265,5 +282,5 @@ header nav a.activo {
 				margin-left: 1em;
 				padding: 0;
 				padding-left: 1em;
-				color:  #c5d5b6;
+				color:  #ffffff;
 			}
