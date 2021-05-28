@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -9,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorPyS">
    <children>
       <ImageView fitHeight="25.0" fitWidth="88.0" layoutX="29.0" layoutY="322.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -70,5 +70,6 @@
             <Image url="@../../../../moviestar.png" />
          </image>
       </ImageView>
+      <Button fx:id="Volver" layoutX="690.0" layoutY="40.0" mnemonicParsing="false" text="Volver" />
    </children>
 </AnchorPane>
