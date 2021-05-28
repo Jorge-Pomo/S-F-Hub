@@ -8,29 +8,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorInicio">
    <children>
       <AnchorPane layoutX="-20.0" layoutY="141.0" prefHeight="687.0" prefWidth="909.0">
          <children>
             <ScrollBar layoutX="791.0" orientation="VERTICAL" prefHeight="687.0" prefWidth="14.0" visible="false" />
-            <Button layoutX="85.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="250.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="415.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP" layoutX="85.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP2" layoutX="250.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP3" layoutX="415.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
             <ScrollBar layoutX="51.0" layoutY="163.0" prefHeight="14.0" prefWidth="858.0" />
-            <Button layoutX="581.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="749.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="85.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="250.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="415.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP4" layoutX="581.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP5" layoutX="749.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP6" layoutX="85.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP7" layoutX="250.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP8" layoutX="415.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
             <ScrollBar layoutX="51.0" layoutY="343.0" prefHeight="14.0" prefWidth="858.0" />
-            <Button layoutX="581.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="749.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="85.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="250.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="415.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP9" layoutX="581.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP10" layoutX="749.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP11" layoutX="85.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP12" layoutX="250.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP13" layoutX="415.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
             <ScrollBar layoutX="51.0" layoutY="516.0" prefHeight="14.0" prefWidth="858.0" />
-            <Button layoutX="581.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button layoutX="749.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP14" layoutX="581.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP15" layoutX="749.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
          </children></AnchorPane>
       <ComboBox fx:id="cbSPM" layoutX="67.0" layoutY="87.0" opacity="0.77" prefHeight="25.0" prefWidth="198.0" promptText="Series, peliculas, Mi Lista" />
       <Label alignment="CENTER" layoutX="307.0" layoutY="28.0" prefHeight="51.0" prefWidth="185.0" text="S&amp;F Hub">
