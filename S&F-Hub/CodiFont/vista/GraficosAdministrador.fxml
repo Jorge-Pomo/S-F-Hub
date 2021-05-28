@@ -19,36 +19,26 @@
                   <Image url="@img/Captura.PNG" />
                </image>
             </ImageView>
-            <LineChart fx:id="grfNuevosUsuarios" layoutX="184.0" layoutY="5.0" prefHeight="219.0" prefWidth="437.0">
+            <LineChart fx:id="grfNuevosUsuarios" layoutX="234.0" layoutY="13.0" prefHeight="254.0" prefWidth="467.0">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis label="Semanas 1 - 4" side="BOTTOM" fx:id="xAxis" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis fx:id="yAxis" label="Numero de usuarios" prefHeight="204.0" prefWidth="49.0" side="LEFT" />
               </yAxis>
             </LineChart>
-            <Label layoutX="224.0" layoutY="208.0" prefHeight="45.0" prefWidth="222.0" text="Nuevos Usuarios">
-               <font>
-                  <Font size="27.0" />
-               </font>
-            </Label>
-            <Label layoutX="224.0" layoutY="502.0" prefHeight="45.0" prefWidth="274.0" text="Series más buscadas">
-               <font>
-                  <Font size="27.0" />
-               </font>
-            </Label>
             <Label layoutX="44.0" layoutY="140.0" prefHeight="26.0" prefWidth="120.0" text="Mensajes de error">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <Label fx:id="lblError" alignment="TOP_LEFT" layoutX="44.0" layoutY="166.0" prefHeight="347.0" prefWidth="120.0" textAlignment="JUSTIFY" textFill="RED" wrapText="true" />
-            <BarChart fx:id="grfSeresBuscadas" layoutX="184.0" layoutY="273.0" prefHeight="219.0" prefWidth="437.0">
+            <BarChart fx:id="grfSeresBuscadas" layoutX="234.0" layoutY="291.0" prefHeight="261.0" prefWidth="509.0">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis label="Nombre de las Series" side="BOTTOM" fx:id="xAxis" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis fx:id="yAxis" label="Numero de usuarios" side="LEFT" />
               </yAxis>
             </BarChart>
          </children>
