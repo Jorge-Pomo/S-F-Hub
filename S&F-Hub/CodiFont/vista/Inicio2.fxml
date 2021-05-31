@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="94.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../S-F-Hub-master/S&amp;F-Hub/CodiFont/Imagenes%20proyecto/Bob'sBurguer.jpg" />
+                  <Image url="@./vista/img/Bob'sBurguer.jpg" />
                </image>
             </ImageView>
             <ScrollBar layoutX="791.0" orientation="VERTICAL" prefHeight="687.0" prefWidth="14.0" visible="false" />

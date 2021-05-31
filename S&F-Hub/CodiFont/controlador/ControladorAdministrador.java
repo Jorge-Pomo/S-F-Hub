@@ -20,10 +20,10 @@ import javafx.stage.Stage;
 public class ControladorAdministrador {
 
 	// Atributos graficos FXML
-	@FXML TextField txtUsuario;
-	@FXML PasswordField txtContraseña;
-	@FXML Button btnIniciar;
-	@FXML Label lblError;
+	@FXML private TextField txtUsuario;
+	@FXML private PasswordField txtContraseña;
+	@FXML private Button btnIniciar;
+	@FXML private Label lblError;
 
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> 
@@ -73,7 +73,7 @@ public class ControladorAdministrador {
 				conexion.close();
 
 				// Ir ventana PyS
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PyS.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/GraficosAdministrador.fxml"));
 
 				Parent root = loader.load();
 				Stage stage = (Stage) this.btnIniciar.getScene().getWindow();
@@ -86,6 +86,8 @@ public class ControladorAdministrador {
 			e.printStackTrace();
 		}
 
+	
 	}
-
 }
+
+

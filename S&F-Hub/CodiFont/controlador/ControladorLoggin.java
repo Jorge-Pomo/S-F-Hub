@@ -28,6 +28,7 @@ public class ControladorLoggin implements Initializable {
 	@FXML private Button btnIniciarSesion;
 	@FXML private Button btnRegistrarse;
 	@FXML private Label lblError;
+	@FXML private Button btnAdmin;
 
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> 
@@ -38,6 +39,7 @@ public class ControladorLoggin implements Initializable {
 
 		this.btnRegistrarse.setOnMouseClicked((event) -> registrarse());
 		this.btnIniciarSesion.setOnMouseClicked((event) -> iniciarSesion());
+		this.btnAdmin.setOnMouseClicked((event) -> entrarAdmin());
 	}
 
 	/**
@@ -108,6 +110,23 @@ public class ControladorLoggin implements Initializable {
 
 			Parent root = loader.load();
 			Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow();
+
+			stage.setTitle("S&F Hub -- Registrarse");
+			stage.setScene(new Scene(root));
+			stage.show();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void entrarAdmin() {
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Administrador.fxml"));
+
+			Parent root = loader.load();
+			Stage stage = (Stage) this.btnAdmin.getScene().getWindow();
 
 			stage.setTitle("S&F Hub -- Registrarse");
 			stage.setScene(new Scene(root));
