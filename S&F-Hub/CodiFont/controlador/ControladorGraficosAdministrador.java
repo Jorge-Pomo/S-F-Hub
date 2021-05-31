@@ -11,14 +11,19 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Side;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class ControladorGraficosAdministrador implements Initializable {
 
@@ -27,13 +32,16 @@ public class ControladorGraficosAdministrador implements Initializable {
 	@FXML private BarChart grfSeresBuscadas;
 
 	@FXML private Label lblError;
-
+	@FXML private Button btnRegistrarSP;
+	
 	// Array usuarios diarios
 	int dia[] = { 0, 0, 0, 0, 0, 0, 0 };
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+		btnRegistrarSP.setOnMouseClicked((event) -> resgistrarSP());
+		
 		try {
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -124,5 +132,23 @@ public class ControladorGraficosAdministrador implements Initializable {
 
 		ObservableList<XYChart.Series<String, Number>> data = FXCollections.observableArrayList();
 		data.addAll(series1, series2, series3, series4, series5);
+	}
+	
+	public void resgistrarSP() {
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/RegistrarPSAdministrador.fxml"));
+
+			Parent root = loader.load();
+			Stage stage = (Stage) this.btnRegistrarSP.getScene().getWindow();
+
+			stage.setTitle("S&F Hub -- Registrarse");
+			stage.setScene(new Scene(root));
+			stage.show();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		
+		}
 	}
 }
