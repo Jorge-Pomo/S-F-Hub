@@ -6,35 +6,36 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class ControladorAdministrador {
+public class ControladorAdministrador implements Initializable {
 
 	// Atributos graficos FXML
 	@FXML private TextField txtUsuario;
-	@FXML private PasswordField txtContraseña;
 	@FXML private Button btnIniciar;
+	@FXML private TextField txtContraseña;
 	@FXML private Label lblError;
 
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> 
 	 * <p>Anidamos cada boton con su metodo</p>
 	 */
+	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 		this.btnIniciar.setOnMouseClicked((event) -> iniciarSesion());
 	}
 
-	//Metodos
 	/**
 	 * <h2>Boton de iniciarSesion</h2>
 	 * 
@@ -49,6 +50,7 @@ public class ControladorAdministrador {
 	 *	<li>Cerramos la conexion y nos vamos a la pestaña de Inicio</li>
 	 * </ul>
 	 * */
+	// Metodos
 	private void iniciarSesion() {
 
 		CharSequence contra1 = txtContraseña.getCharacters();
@@ -86,8 +88,6 @@ public class ControladorAdministrador {
 			e.printStackTrace();
 		}
 
-	
 	}
+
 }
-
-
