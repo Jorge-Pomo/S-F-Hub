@@ -128,9 +128,9 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 
 		this.rutaImg = selectedFile.getName();
 		
-		Image image = new Image("..\\..\\..\\..\\..\\Pictures\\Captura.PNG");
-		
-		imgSP.setImage(image);
+		  Image image = new Image("file:" + selectedFile.getAbsolutePath());
+		  
+          imgSP.setImage(image);
 	}
 	
 //	private void convertImage() throws IOException{
