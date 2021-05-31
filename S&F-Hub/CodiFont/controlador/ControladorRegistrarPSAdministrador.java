@@ -1,26 +1,46 @@
 package controlador;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.Base64;
 import java.util.ResourceBundle;
+
+import javax.imageio.ImageIO;
+
+import com.mysql.cj.x.protobuf.MysqlxNotice.Warning.Level;
+import com.sun.javafx.logging.Logger;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
 
-public class ControladorRegistrarPSAdministrador implements Initializable{
+public class ControladorRegistrarPSAdministrador implements Initializable {
 
 	@FXML private TextField txtTitulo;
 	@FXML private ImageView imgSP;
+	@FXML private Button btnImg;
 	@FXML private TextArea txtPlataformas;
 	@FXML private TextArea txtSinopsis;
 	@FXML private TextArea txtReparto;
@@ -30,16 +50,20 @@ public class ControladorRegistrarPSAdministrador implements Initializable{
 	@FXML private Label lblError;
 	@FXML private Slider slivaloracion;
 	@FXML private TextField txtGenero;
-	
+	@FXML private ListView listImg;
+
+	private String rutaImg;
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
+
 		registrar.setOnMouseClicked((event) -> resgistrar());
+		btnImg.setOnMouseClicked((event) -> imagen());
 	}
 
-	//Registrar Usuario
+	// Registrar Usuario
 	private void resgistrar() {
-		
+
 		String titulo = txtTitulo.getText();
 		Image img = imgSP.getImage();
 		String plataformas = txtPlataformas.getText();
@@ -49,29 +73,36 @@ public class ControladorRegistrarPSAdministrador implements Initializable{
 		String esSerie;
 		int valoracion = (int) slivaloracion.getValue();
 		String genero = txtGenero.getText();
-		
-		if(checkPelicula.isSelected()) {
+
+		if (checkPelicula.isSelected()) {
 			esPelicula = "SI";
 			esSerie = "NO";
-		}else {
+		} else {
 			esPelicula = "NO";
 			esSerie = "SI";
 		}
-		
-		if(txtTitulo.getText().equals("") || txtPlataformas.getText().equals("") || txtSinopsis.getText().equals("") || txtReparto.getText().equals("")) {
+
+		if (txtTitulo.getText().equals("") || txtPlataformas.getText().equals("") || txtSinopsis.getText().equals("")
+				|| txtReparto.getText().equals("")) {
 			lblError.setText("Hay campos vacios");
-		}else {
+		} else {
 			// Conexion BBDD
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub",
-						"Conectar", "12345678");
+				Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
+						"12345678");
 
 				Statement s = conexion.createStatement();
 
-				int rs = s.executeUpdate(
-						"INSERT INTO `catalogo`(`Imagen`, `Titulo`, `plataformas`, `valoracion`, `descripcion`, `genero`, `reparto`, `esSerie`, `esPelicula`) VALUES ('"+ img + "','" + titulo + "','" + plataformas + "','" + valoracion + "','" + sinopsis + "','" + genero + "','" + reparto + "','" + esSerie + "','" + esPelicula + "')");
+				String cnsulta = "INSERT INTO `catalogo`(`Imagen`, `Titulo`, `plataformas`, `valoracion`, `descripcion`, `genero`, `reparto`, `esSerie`, `esPelicula`, `imgB`) VALUES ('"
+						+ this.rutaImg + "','" + titulo + "','" + plataformas + "','" + valoracion + "','"
+						+ sinopsis + "','" + genero + "','" + reparto + "','" + esSerie + "','" + esPelicula
+						+ "','')";
+				System.out.println(cnsulta);
+				int rs = s.executeUpdate(cnsulta);
 
+				
+				
 				// Cerramos Conexion
 				conexion.close();
 
@@ -79,10 +110,43 @@ public class ControladorRegistrarPSAdministrador implements Initializable{
 				e.printStackTrace();
 			}
 		}
+
+	}
+
+	public void imagen() {
+		FileChooser fc = new FileChooser();
+		fc.setInitialDirectory(new File("C:\\Users\\DAM\\Pictures"));
+		fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Images", "*.*"),
+				new FileChooser.ExtensionFilter("JPG", "*.jpg"), new FileChooser.ExtensionFilter("PNG", "*.png"));
+		File selectedFile = fc.showOpenDialog(null);
+
+		if (selectedFile != null) {
+			listImg.getItems().add(selectedFile.getName());
+		} else {
+			lblError.setText("L'arxiu no es valid");
+		}
+
+		this.rutaImg = selectedFile.getName();
 		
+		Image image = new Image("..\\..\\..\\..\\..\\Pictures\\Captura.PNG");
 		
+		imgSP.setImage(image);
 	}
 	
-	
-	
+//	private void convertImage() throws IOException{
+//		String dirName="C:\\";
+//		ByteArrayOutputStream baos=new ByteArrayOutputStream(1000);
+//		BufferedImage img=ImageIO.read(new File(dirName,"rose.jpg"));
+//		ImageIO.write(img, "jpg", baos);
+//		baos.flush();
+// 
+//		String base64String=Base64.encode(baos.toByteArray());
+//		baos.close();
+// 
+//		byte[] bytearray = Base64.decode(base64String);
+// 
+//		BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
+//		ImageIO.write(imag, "jpg", new File(dirName,"snap.jpg"));
+//	}
+
 }
