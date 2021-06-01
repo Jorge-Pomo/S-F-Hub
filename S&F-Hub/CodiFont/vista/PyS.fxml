@@ -4,40 +4,36 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="btnAñadirComentario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorPyS">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorPyS">
    <children>
       <ImageView fitHeight="25.0" fitWidth="88.0" layoutX="29.0" layoutY="322.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../455GR.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="168.0" fitWidth="150.0" layoutX="37.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="192.0" fitWidth="276.0" layoutX="24.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Bob'sBurguer.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="250.0" layoutY="21.0" text="Bob's Burguer">
+      <Label fx:id="Titulo" layoutX="302.0" layoutY="7.0">
          <font>
             <Font name="DejaVuMathTeXGyre-Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="422.0" layoutY="44.0" text="SINOPSIS">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-      <Label layoutX="423.0" layoutY="262.0" text="REPARTO">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
+      <Label layoutX="422.0" layoutY="44.0" text="SINOPSIS" />
+      <TextArea layoutX="324.0" layoutY="71.0" prefHeight="172.0" prefWidth="247.0" />
+      <Label layoutX="423.0" layoutY="262.0" text="REPARTO" />
+      <TextArea layoutX="324.0" layoutY="289.0" prefHeight="80.0" prefWidth="247.0" />
       <Label layoutX="19.0" layoutY="214.0" text="PLATAFORMAS" />
+      <TextArea layoutX="24.0" layoutY="350.0" prefHeight="15.0" prefWidth="169.0" />
       <ComboBox layoutX="74.0" layoutY="277.0" prefWidth="150.0" />
       <CheckBox layoutX="33.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" />
       <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="18.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
@@ -76,17 +72,7 @@
          </image>
       </ImageView>
       <Button fx:id="btnVolver" layoutX="690.0" layoutY="40.0" mnemonicParsing="false" text="Volver" />
-      <Label alignment="TOP_LEFT" layoutX="346.0" layoutY="85.0" prefHeight="168.0" prefWidth="254.0" text="Label">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TableView fx:id="tableReparto" layoutX="338.0" layoutY="311.0" prefHeight="260.0" prefWidth="254.0">
-        <columns>
-          <TableColumn prefWidth="199.0" text="C1" />
-        </columns>
-      </TableView>
-      <TextArea fx:id="txtComentario" layoutX="32.0" layoutY="355.0" prefHeight="130.0" prefWidth="244.0" promptText="Comentario" />
-      <Button layoutX="161.0" layoutY="497.0" mnemonicParsing="false" text="Añadir Comentario" />
+      <Button fx:id="AñadirALista" layoutX="640.0" layoutY="94.0" mnemonicParsing="false" text="Añadir a MiLista" />
+      <TextField layoutX="288.0" layoutY="15.0" prefHeight="25.0" prefWidth="92.0" text="Bob's Burguer" />
    </children>
 </AnchorPane>
