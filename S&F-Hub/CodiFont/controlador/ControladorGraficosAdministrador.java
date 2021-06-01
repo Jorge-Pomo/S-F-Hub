@@ -40,7 +40,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		btnRegistrarSP.setOnMouseClicked((event) -> resgistrarSP());
+		btnRegistrarSP.setOnMouseClicked((event) -> ventanaRegistrarSP());
 		
 		try {
 
@@ -134,7 +134,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 		data.addAll(series1, series2, series3, series4, series5);
 	}
 	
-	public void resgistrarSP() {
+	public void ventanaRegistrarSP() {
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/RegistrarPSAdministrador.fxml"));
@@ -142,13 +142,12 @@ public class ControladorGraficosAdministrador implements Initializable {
 			Parent root = loader.load();
 			Stage stage = (Stage) this.btnRegistrarSP.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Registrarse");
+			stage.setTitle("S&F Hub -- Loggin");
 			stage.setScene(new Scene(root));
 			stage.show();
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		
 		}
 	}
 }

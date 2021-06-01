@@ -17,7 +17,7 @@ public class Main extends Application {
 		 * 
 		 */
 		try {
-			String fxml = "vista/RegistrarPSAdministrador.fxml";
+			String fxml = "vista/MiLista.fxml";
 
 			// Cargar la ventana
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));

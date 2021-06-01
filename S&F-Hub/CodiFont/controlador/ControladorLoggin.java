@@ -141,7 +141,7 @@ public class ControladorLoggin implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		
-		}
+	}
 	}
 }
 
