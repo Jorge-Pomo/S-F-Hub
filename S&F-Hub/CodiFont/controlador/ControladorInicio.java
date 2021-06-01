@@ -1,6 +1,11 @@
 package controlador;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -15,71 +20,64 @@ import javafx.stage.Stage;
 public class ControladorInicio implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML
-	private TextField txtBuscarSerie;
-	@FXML
-	private Button btnSyP;
-	@FXML
-	private Button btnSyP2;
-	@FXML
-	private Button btnSyP3;
-	@FXML
-	private Button btnSyP4;
-	@FXML
-	private Button btnSyP5;
-	@FXML
-	private Button btnSyP6;
-	@FXML
-	private Button btnSyP7;
-	@FXML
-	private Button btnSyP8;
-	@FXML
-	private Button btnSyP9;
-	@FXML
-	private Button btnSyP10;
-	@FXML
-	private Button btnSyP11;
-	@FXML
-	private Button btnSyP12;
-	@FXML
-	private Button btnSyP13;
-	@FXML
-	private Button btnSyP14;
-	@FXML
-	private Button btnSyP15;
-	@FXML
-	private Button btnLista;
-	@FXML
-	private Button btnAyuda;
-	
-	
+	@FXML private TextField txtBuscarSerie;
+	@FXML private Button btnBuscarSerie;
+	@FXML private Button btnSyP;
+	@FXML private Button btnSyP2;
+	@FXML private Button btnSyP3;
+	@FXML private Button btnSyP4;
+	@FXML private Button btnSyP5;
+	@FXML private Button btnSyP6;
+	@FXML private Button btnSyP7;
+	@FXML private Button btnSyP8;
+	@FXML private Button btnSyP9;
+	@FXML private Button btnSyP10;
+	@FXML private Button btnSyP11;
+	@FXML private Button btnSyP12;
+	@FXML private Button btnSyP13;
+	@FXML private Button btnSyP14;
+	@FXML private Button btnSyP15;
+	@FXML private Button btnLista;
+	@FXML private Button btnAyuda;
 
+	public static String bSerie;
+	
+	//Getters && Setters
+	public static String getbSerie() {
+		return bSerie;
+	}
+
+	public void setbSerie(String bSerie) {
+		this.bSerie = bSerie;
+	}
+	
+	// Metodos
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		btnSyP.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP2.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP3.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP4.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP5.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP6.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP7.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP8.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP9.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP10.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP11.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP12.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP13.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP14.setOnMouseClicked((event) -> entrarSerie());
+		btnSyP15.setOnMouseClicked((event) -> entrarSerie());
 
-		btnSyP.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP2.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP3.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP4.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP5.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP6.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP7.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP8.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP9.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP10.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP11.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP12.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP13.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP14.setOnMouseClicked((event) -> buscarSerie());
-		btnSyP15.setOnMouseClicked((event) -> buscarSerie());
 		btnLista.setOnMouseClicked((event) -> crearLista());
 		btnAyuda.setOnMouseClicked((event) -> soporteTecnico());
 
+		btnBuscarSerie.setOnMouseClicked((event) -> buscarSerie());
 
 	}
 
-	private void buscarSerie() {
-
+	public void entrarSerie() {
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PyS.fxml"));
@@ -100,7 +98,6 @@ public class ControladorInicio implements Initializable {
 			Stage stage13 = (Stage) this.btnSyP13.getScene().getWindow();
 			Stage stage14 = (Stage) this.btnSyP14.getScene().getWindow();
 			Stage stage15 = (Stage) this.btnSyP15.getScene().getWindow();
-			
 
 			stage.setTitle("S&F Hub -- Serie");
 			stage.setScene(new Scene(root));
@@ -110,43 +107,66 @@ public class ControladorInicio implements Initializable {
 			e.printStackTrace();
 		}
 	}
-		
-		private void crearLista() {
 
-			try {
+	public void crearLista() {
 
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/MiLista.fxml"));
+		try {
 
-				Parent root = loader.load();
-				Stage stage = (Stage) this.btnLista.getScene().getWindow();
-				
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/MiLista.fxml"));
 
-				stage.setTitle("S&F Hub -- Lista");
-				stage.setScene(new Scene(root));
-				stage.show();
+			Parent root = loader.load();
+			Stage stage = (Stage) this.btnLista.getScene().getWindow();
 
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		
+			stage.setTitle("S&F Hub -- Lista");
+			stage.setScene(new Scene(root));
+			stage.show();
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-			private void soporteTecnico() {
 
-				try {
+	}
 
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/SoporteTc.fxml"));
+	public void soporteTecnico() {
 
-					Parent root = loader.load();
-					Stage stage = (Stage) this.btnAyuda.getScene().getWindow();
-					
+		try {
 
-					stage.setTitle("S&F Hub -- Ayuda");
-					stage.setScene(new Scene(root));
-					stage.show();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/SoporteTc.fxml"));
 
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+			Parent root = loader.load();
+			Stage stage = (Stage) this.btnAyuda.getScene().getWindow();
+
+			stage.setTitle("S&F Hub -- Ayuda");
+			stage.setScene(new Scene(root));
+			stage.show();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void buscarSerie() {
+		
+		setbSerie(txtBuscarSerie.getText());
+		bSerie = txtBuscarSerie.getText();
+		System.out.println(getbSerie());
+		System.out.println();
+		try {			
+			//Abrimos pestaña
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/buscadorSerie.fxml"));
+
+			Parent root = (Parent)loader.load();
+			Stage stage =new Stage();
+
+			stage.setTitle("S&F Hub -- Ayuda");
+			stage.setScene(new Scene(root));
+			stage.show();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
 
 	}
 
