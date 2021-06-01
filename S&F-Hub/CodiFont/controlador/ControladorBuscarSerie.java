@@ -23,7 +23,13 @@ public class ControladorBuscarSerie implements Initializable {
 	@FXML TableColumn<ControladorBuscarSerie, String> idTitulo;
 	@FXML TableColumn<ControladorBuscarSerie, String> idEnlace;
 	
-	
+	/**
+	 * <h2> Tabla con el resultado de la busqueda sql "Buscar Series"</h2>
+	 * @param nombreSerie texto del campo de texto de la ventana Inicio2, contiene el nombre a buscar
+	 * 
+	 * <p>Nos conectamos a la BBDD</p>
+	 * <p>Mostramos contenido </p>
+	 * */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		String nombreSerie = ControladorInicio.getbSerie();

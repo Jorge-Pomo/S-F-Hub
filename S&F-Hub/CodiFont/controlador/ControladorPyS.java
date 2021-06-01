@@ -1,7 +1,5 @@
 package controlador;
 
-import java.awt.Label;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -12,8 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ControladorPyS implements Initializable {
@@ -21,34 +17,13 @@ public class ControladorPyS implements Initializable {
 	
 	@FXML
 	private Button btnVolver;
-	@FXML
-	private Button AñadirALista;
-	@FXML
-	private Label Titulo;
 	
 	
-	
-	ControladorPyS ControladorPyS;
-	
-	@FXML
-	public void recibirparametros ( String texto) {
-	Titulo.setText(Titulo.getText());	
-		
-	}
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		btnVolver.setOnMouseClicked((event) -> Atras());
-		ControladorPyS=this;
-		AñadirALista.setOnMouseClicked((event) -> {
-			try {
-				Añadir();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		});
 		
 	}
 	
@@ -70,37 +45,6 @@ public class ControladorPyS implements Initializable {
 		e.printStackTrace();
 	}
 	}
-	
-	
-	
-	private void Añadir() throws IOException {
-		
-		try {
-		
-		Stage stage2 = new Stage();
-		
-		FXMLLoader loader = new FXMLLoader();
-		
-		AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("MiLista.fxml"));
-		
-		ControladorMiLista ControladorMiListaInstancia=(ControladorMiLista)loader.getController();
-
-		ControladorMiListaInstancia.reciberparametros(ControladorPyS, Titulo.getText()); 
-		
-		
-		Scene scene = new Scene(root);
-		stage2.setScene(scene);
-		stage2.alwaysOnTopProperty();
-		stage2.initModality(Modality.APPLICATION_MODAL);
-		stage2.show();
-		} catch(IOException e) {
-			
-			e.printStackTrace();
-		}
-	}
-	
 }
-
-
 	
 

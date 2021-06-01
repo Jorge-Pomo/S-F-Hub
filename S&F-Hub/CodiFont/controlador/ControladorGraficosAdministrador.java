@@ -34,9 +34,19 @@ public class ControladorGraficosAdministrador implements Initializable {
 	@FXML private Label lblError;
 	@FXML private Button btnRegistrarSP;
 	
-	// Array usuarios diarios
+	
+	/**
+	 * @param dia[] array vacio para almacenar los usuarios registrados diariamente en un rango de 7 dias
+	 * */
 	int dia[] = { 0, 0, 0, 0, 0, 0, 0 };
 
+	/**
+	 * <h2>Inicializamos el boton btnRegistrarSP y lo juntamos con su metodo "ventanaRegistrarSP"</h2>
+	 * 
+	 * <h2>Nos conectamos a la BBDD</h2>
+	 * <p>Consultamos los usuaris añadidos en los ultimos 7 dias</p>
+	 * <p>Guardamos la consulta en el array dia</p>
+	 * */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -59,22 +69,30 @@ public class ControladorGraficosAdministrador implements Initializable {
 				i++;
 			}
 			
-			for (int j = 0; j < dia.length; j++) {
-				
-				System.out.println(dia[j]);
-			}
+//			for (int j = 0; j < dia.length; j++) {
+//				
+//				System.out.println(dia[j]);
+//			}
 
 		} catch (Exception e) {
 
 		}
 
+		
 		//LineChart
+		/**
+		 * @param grfNuevosUsuarios.setTitle() le ponemos titulo a la grafica de lineas
+		 * 
+		 * <p>Creamos un array con el nombre de cada campo "Dia 1..." y la posicion del array dia que contiene los usuarios registrados por dia</p>
+		 * 
+		 * <p> Añadimos los dias a la grafica </p>
+		 * */
 		grfNuevosUsuarios.setTitle("Nuevos usuarios diarios");
 
 		//Datos Dias
-		XYChart.Series<String, Number> dias1 = new XYChart.Series<>();
-		dias1.setName("Nombre Serie");
-		dias1.getData().addAll(
+		XYChart.Series<String, Number> dias = new XYChart.Series<>();
+		dias.setName("Nombre Serie");
+		dias.getData().addAll(
 				new XYChart.Data<>("Dia 1", dia[0]),
 				new XYChart.Data<>("Dia 2", dia[1]),
 				new XYChart.Data<>("Dia 3", dia[2]),
@@ -83,9 +101,9 @@ public class ControladorGraficosAdministrador implements Initializable {
 				new XYChart.Data<>("Dia 6", dia[5]),
 				new XYChart.Data<>("Dia 7", dia[6]));
 
-		grfNuevosUsuarios.getData().addAll(dias1);
+		grfNuevosUsuarios.getData().addAll(dias);
 		ObservableList<XYChart.Series<String, Number>> data2 = FXCollections.observableArrayList();
-		data2.addAll(dias1);
+		data2.addAll(dias);
 
 
 		//Barchart
@@ -134,6 +152,10 @@ public class ControladorGraficosAdministrador implements Initializable {
 		data.addAll(series1, series2, series3, series4, series5);
 	}
 	
+	/**
+	 * <h2>Funcionalidad del boton "btnRegistrarSP"</h2>
+	 * 
+	 * */
 	public void ventanaRegistrarSP() {
 		try {
 
