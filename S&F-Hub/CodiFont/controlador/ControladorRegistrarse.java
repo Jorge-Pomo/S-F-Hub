@@ -5,7 +5,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -35,6 +38,7 @@ public class ControladorRegistrarse implements Initializable {
 	@FXML private CheckBox checkPrivacidad;
 	@FXML private Button btnRegistrarse;
 	@FXML private Label lblError;
+	private Date fechaSQL;
 
 	/**
 	 * <h2>Configuración del Boton "Registrarse"</h2> anidamos el boton al metodo
@@ -188,12 +192,15 @@ public class ControladorRegistrarse implements Initializable {
 
 							CharSequence contra1 = txtContra.getCharacters();
 							String contraseña = contra1.toString();
-
+							
+							Date date = new Date();
+							DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+							
 							int rs = s.executeUpdate(
-									"INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`, `telf`, `Email`) VALUES ('"
+									"INSERT INTO usuario (`nombre`, `contraseña`, `publicidad`, `privacidad`, `telf`, `Email`, `Fecha`) VALUES ('"
 											+ txtUser.getText() + "','" + contraseña + "','"
 											+ checkPublicidad.isSelected() + "','" + checkPrivacidad.isSelected()
-											+ "','" + txtTelef.getText() + "','" + txtEmail.getText() + "')");
+											+ "','" + txtTelef.getText() + "','" + txtEmail.getText() + "','" + dateFormat.format(date) + "')");
 
 							// Cerramos Conexion
 							conexion.close();
