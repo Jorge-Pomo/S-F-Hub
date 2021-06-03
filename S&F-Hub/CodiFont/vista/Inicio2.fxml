@@ -39,6 +39,7 @@
             <Button fx:id="btnSyP14" layoutX="581.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
             <Button fx:id="btnSyP15" layoutX="749.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
             <Button fx:id="btnAyuda" layoutX="110.0" layoutY="595.0" mnemonicParsing="false" text="Soporte" />
+            <Button fx:id="Salir" layoutX="776.0" layoutY="595.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Salir" />
          </children></AnchorPane>
       <ComboBox fx:id="cbSPM" layoutX="67.0" layoutY="87.0" opacity="0.77" prefHeight="25.0" prefWidth="198.0" promptText="Series, peliculas, Mi Lista" />
       <Label alignment="CENTER" layoutX="307.0" layoutY="28.0" prefHeight="51.0" prefWidth="185.0" text="S&amp;F Hub">
@@ -51,4 +52,3 @@
       <Button fx:id="btnLista" layoutX="786.0" layoutY="87.0" mnemonicParsing="false" text="Crear Lista" />
    </children>
 </AnchorPane>
-
