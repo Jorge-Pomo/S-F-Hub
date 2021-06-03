@@ -20,7 +20,9 @@ import com.mysql.cj.x.protobuf.MysqlxNotice.Warning.Level;
 import com.sun.javafx.logging.Logger;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -51,6 +53,7 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 	@FXML private Slider slivaloracion;
 	@FXML private TextField txtGenero;
 	@FXML private ListView listImg;
+	@FXML private Button Volver;
 
 	private String rutaImg;
 
@@ -59,6 +62,7 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 
 		registrar.setOnMouseClicked((event) -> resgistrar());
 		btnImg.setOnMouseClicked((event) -> imagen());
+		Volver.setOnMouseClicked((event) -> volver());
 	}
 
 	// Registrar Usuario
@@ -148,5 +152,23 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 //		BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
 //		ImageIO.write(imag, "jpg", new File(dirName,"snap.jpg"));
 //	}
+	
+public void volver() {
+		
+		try {
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/GraficosAdministrador.fxml"));
 
+		Parent root = loader.load();
+		Stage stage = (Stage) this.Volver.getScene().getWindow();
+		
+
+		stage.setTitle("S&F Hub -- Serie");
+		stage.setScene(new Scene(root));
+		stage.show();
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	}
 }

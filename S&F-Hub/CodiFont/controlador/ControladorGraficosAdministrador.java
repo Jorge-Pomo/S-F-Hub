@@ -33,6 +33,8 @@ public class ControladorGraficosAdministrador implements Initializable {
 
 	@FXML private Label lblError;
 	@FXML private Button btnRegistrarSP;
+	@FXML private Button Salir;
+	
 	
 	
 	/**
@@ -51,6 +53,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		btnRegistrarSP.setOnMouseClicked((event) -> ventanaRegistrarSP());
+		Salir.setOnMouseClicked((event) -> salir());
 		
 		try {
 
@@ -171,5 +174,23 @@ public class ControladorGraficosAdministrador implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public void salir() {
+		
+		try {
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Administrador.fxml"));
+
+		Parent root = loader.load();
+		Stage stage = (Stage) this.Salir.getScene().getWindow();
+		
+
+		stage.setTitle("S&F Hub -- Serie");
+		stage.setScene(new Scene(root));
+		stage.show();
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 	}
 }

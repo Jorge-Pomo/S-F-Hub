@@ -39,6 +39,8 @@ public class ControladorInicio implements Initializable {
 	@FXML private Button btnSyP15;
 	@FXML private Button btnLista;
 	@FXML private Button btnAyuda;
+	@FXML private Button Salir;
+
 
 	public static String bSerie;
 	
@@ -74,6 +76,7 @@ public class ControladorInicio implements Initializable {
 		btnAyuda.setOnMouseClicked((event) -> soporteTecnico());
 
 		btnBuscarSerie.setOnMouseClicked((event) -> buscarSerie());
+		Salir.setOnMouseClicked((event) -> Salir());
 
 	}
 
@@ -166,6 +169,24 @@ public class ControladorInicio implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 
+		}
+
+	}
+	public void Salir() {
+
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
+
+			Parent root = loader.load();
+			Stage stage = (Stage) this.Salir.getScene().getWindow();
+
+			stage.setTitle("S&F Hub -- Ayuda");
+			stage.setScene(new Scene(root));
+			stage.show();
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 	}
