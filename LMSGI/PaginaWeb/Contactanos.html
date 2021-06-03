@@ -46,25 +46,7 @@
     
     <!--------IMPORTS-------->
 	<title>S&F Hub</title >
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-    <script>
-        function SubForm (){
-            $.ajax({
-                url:"https://api.apispreadsheets.com/data/13358/",
-                type:"post",
-                data:$("#myForm").serializeArray(),
-                success: function(){
-                    alert("Form Data Submitted :)")
-                },
-                error: function(){
-                    alert("There was an error :(")
-                }
-            });
-        }
-    </script>
+ 
 </head>
 <body>
 	<header>
@@ -124,7 +106,7 @@
             </div>
             <div class="form-content">
                 <p>¿Tiene algun problema? Contactenos.</p>
-                <form role="form" id="contactForm" method="post"  id="myForm" >
+                <form action="https://formspree.io/f/mjvjwjaw" method="post" role="form" id="contactForm">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group">
@@ -150,10 +132,10 @@
                     <div class="text-center">
                       <!---<input type="button" class="btn btn-lg btn-theme" value="Enviar" onclick='SubForm()'></input>--->
                     </div>
-             <input type="button" class="btn btn-lg btn-theme" value="Enviar" onclick="SubForm()"/>           
+             <button class="btn btn-lg btn-theme" type="submit">Enviar</button>           
     </form>
             </div>
-        
+      <!---  class="btn btn-lg btn-theme" --->
         </div>
     </div>
     </div>
