@@ -56,10 +56,10 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 	@FXML private ListView listImg;
 	@FXML private Button Volver;
 	@FXML private Label lblRegistro;
-	
+
 	private String rutaImg;
 	private String nombreImg;
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -70,7 +70,7 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 
 	// Registrar Usuario
 	private void resgistrar() {
-		
+
 		String titulo = txtTitulo.getText();
 		Image img = imgSP.getImage();
 		String plataformas = txtPlataformas.getText();
@@ -102,32 +102,32 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 				Statement s = conexion.createStatement();
 
 				String cnsulta = "INSERT INTO `catalogo`(`Imagen`, `Titulo`, `plataformas`, `valoracion`, `descripcion`, `genero`, `reparto`, `esSerie`, `esPelicula`, `imgB`) VALUES ('"
-						+ this.rutaImg + "','" + titulo + "','" + plataformas + "','" + valoracion + "','"
-						+ sinopsis + "','" + genero + "','" + reparto + "','" + esSerie + "','" + esPelicula
-						+ "','')";
+						+ this.rutaImg + "','" + titulo + "','" + plataformas + "','" + valoracion + "','" + sinopsis
+						+ "','" + genero + "','" + reparto + "','" + esSerie + "','" + esPelicula + "','')";
 				System.out.println(cnsulta);
 				int rs = s.executeUpdate(cnsulta);
-				
-				//IMG
+
+				// IMG
 				FileInputStream is = new FileInputStream(this.nombreImg);
-				
-				PreparedStatement st = conexion.prepareStatement("update catalogo set imgB  = ? WHERE Titulo = '" + titulo + "'");
-				
+
+				PreparedStatement st = conexion
+						.prepareStatement("update catalogo set imgB  = ? WHERE Titulo = '" + titulo + "'");
+
 				st.setBlob(1, is);
-				
+
 				st.execute();
 				is.close();
 				st.close();
-				
+
 				// Cerramos Conexion
 				conexion.close();
-				
+
 				lblRegistro.setOpacity(1);
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
+
 		}
 
 	}
@@ -146,45 +146,44 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 		}
 
 		this.rutaImg = selectedFile.getName();
-		
-		 Image image = new Image("file:" + selectedFile.getAbsolutePath());
-		  
-         	 imgSP.setImage(image);
-		 this.nombreImg = selectedFile.getAbsolutePath();
+
+		Image image = new Image("file:" + selectedFile.getAbsolutePath());
+
+		imgSP.setImage(image);
+		this.nombreImg = selectedFile.getAbsolutePath();
 	}
-	
-//	private void convertImage() throws IOException{
-//		String dirName="C:\\";
-//		ByteArrayOutputStream baos=new ByteArrayOutputStream(1000);
-//		BufferedImage img=ImageIO.read(new File(dirName,"rose.jpg"));
-//		ImageIO.write(img, "jpg", baos);
-//		baos.flush();
-// 
-//		String base64String=Base64.encode(baos.toByteArray());
-//		baos.close();
-// 
-//		byte[] bytearray = Base64.decode(base64String);
-// 
-//		BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
-//		ImageIO.write(imag, "jpg", new File(dirName,"snap.jpg"));
-//	}
-	
-public void volver() {
-		
+
+	// private void convertImage() throws IOException{
+	// String dirName="C:\\";
+	// ByteArrayOutputStream baos=new ByteArrayOutputStream(1000);
+	// BufferedImage img=ImageIO.read(new File(dirName,"rose.jpg"));
+	// ImageIO.write(img, "jpg", baos);
+	// baos.flush();
+	//
+	// String base64String=Base64.encode(baos.toByteArray());
+	// baos.close();
+	//
+	// byte[] bytearray = Base64.decode(base64String);
+	//
+	// BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
+	// ImageIO.write(imag, "jpg", new File(dirName,"snap.jpg"));
+	// }
+
+	public void volver() {
+
 		try {
-		
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/GraficosAdministrador.fxml"));
 
-		Parent root = loader.load();
-		Stage stage = (Stage) this.Volver.getScene().getWindow();
-		
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/GraficosAdministrador.fxml"));
 
-		stage.setTitle("S&F Hub -- Serie");
-		stage.setScene(new Scene(root));
-		stage.show();
+			Parent root = loader.load();
+			Stage stage = (Stage) this.Volver.getScene().getWindow();
 
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
+			stage.setTitle("S&F Hub -- Serie");
+			stage.setScene(new Scene(root));
+			stage.show();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

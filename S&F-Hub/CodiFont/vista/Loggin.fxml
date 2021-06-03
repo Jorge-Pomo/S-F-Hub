@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorLoggin">
+<AnchorPane id="anchorrPane" stylesheets="@css/fondo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorLoggin">
    <children>
-      <AnchorPane prefHeight="606.0" prefWidth="819.0">
+      <AnchorPane id="anchorrPane" prefHeight="606.0" prefWidth="819.0" style="-fx-background-color: white;" stylesheets="@css/fondo.css">
          <children>
-            <Label alignment="CENTER" layoutX="346.0" layoutY="64.0" prefHeight="66.0" prefWidth="108.0" text="Loggin">
+            <Label alignment="CENTER" layoutX="330.0" layoutY="76.0" prefHeight="76.0" prefWidth="130.0" text="Loggin">
                <font>
-                  <Font name="Berlin Sans FB" size="36.0" />
+                  <Font size="26.0" />
                </font>
             </Label>
             <Label fx:id="lblUsuario" layoutX="364.0" layoutY="166.0" text="Usuario">
@@ -41,9 +41,9 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ImageView fitHeight="119.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="100.0" fitWidth="139.0" layoutX="58.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../S-F-Hub-master/S&amp;F-Hub/CodiFont/Imagenes%20proyecto/Captura.PNG" />
+                  <Image url="@img/Captura.PNG" />
                </image>
             </ImageView>
             <Button fx:id="EntrarAdmin" layoutX="730.0" layoutY="545.0" mnemonicParsing="false" opacity="0.1" text="Admin" />

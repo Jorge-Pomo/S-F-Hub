@@ -76,10 +76,6 @@ public class ControladorPyS implements Initializable  {
 			stage.setScene(new Scene(root));
 			stage.show();
 			
-			
-			
-			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -87,7 +83,3 @@ public class ControladorPyS implements Initializable  {
 	}
 	
 }
-
-
-	
-

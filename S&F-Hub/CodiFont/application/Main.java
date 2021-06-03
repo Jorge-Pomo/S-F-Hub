@@ -17,7 +17,7 @@ public class Main extends Application {
 		 * 
 		 */
 		try {
-			String fxml = "vista/Loggin.fxml";
+			String fxml = "vista/Inicio2.fxml";
 
 			// Cargar la ventana
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
