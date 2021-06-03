@@ -20,11 +20,11 @@ body {
 }
 
 .contenedor2 {
-	
-	
+
+
     text-align: center;
     vertical-align: middle;
-    
+
 }
 
 header {
@@ -52,8 +52,8 @@ margin-bottom: 30px;
 height: 0.5px;
 margin-top: 20px;
 
-}	
-	
+}
+
 .menu2{
 font-size: medium;
 color: darkred;
@@ -74,33 +74,35 @@ header nav a.activo {
 	color: #FFF;
 
 }
-.h1{
 
-margin-left: 20px;	
+.h1{
+	margin-left: 23%;
 }
 .texto1{
-margin-left: 180PX;
-
+	text-align: justify;
+margin-left: 20%;
+margin-right: 20%;
 
 }
 .h2{
-margin-left: 20px;	
-
+	margin-top: 3%;
+margin-left: 23%;
 }
 .h3{
-	margin-top: 40px;
-	margin-left: 20px;	
+	margin-top: 3%;
+	margin-left: 23%;
 }
 .texto3{
-	margin-left: 180PX;
+	text-align: justify;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 .texto4 {
-
-	margin-top: 10px;
-	margin-left: 180PX;
+	text-align: justify;
+	margin-left: 20%;
+	margin-right: 20%;
 
 }
-
 
 /* ---- ----- ----- Pelicula Principal ----- ----- ----- */
 .pelicula-principal {
@@ -123,7 +125,7 @@ margin-left: 20px;
 	background-position: center center;
 	background-size: cover;
 	margin-bottom: 3.12em;
-	
+
 }
 
 .pelicula-principal .contenedor {
