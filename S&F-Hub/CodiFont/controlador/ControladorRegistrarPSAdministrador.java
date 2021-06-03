@@ -56,7 +56,8 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 	@FXML private Button Volver;
 
 	private String rutaImg;
-
+	private String nombreImg;
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -104,8 +105,17 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 						+ "','')";
 				System.out.println(cnsulta);
 				int rs = s.executeUpdate(cnsulta);
-
 				
+				//IMG
+				FileInputStream is = new FileInputStream(this.nombreImg);
+				
+				PreparedStatement st = conexion.prepareStatement("update catalogo set imgB  = ? WHERE Titulo = '" + titulo + "'");
+				
+				st.setBlob(1, is);
+				
+				st.execute();
+				is.close();
+				st.close();
 				
 				// Cerramos Conexion
 				conexion.close();
@@ -132,9 +142,10 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 
 		this.rutaImg = selectedFile.getName();
 		
-		  Image image = new Image("file:" + selectedFile.getAbsolutePath());
+		 Image image = new Image("file:" + selectedFile.getAbsolutePath());
 		  
-          imgSP.setImage(image);
+         	 imgSP.setImage(image);
+		 this.nombreImg = selectedFile.getAbsolutePath();
 	}
 	
 //	private void convertImage() throws IOException{
