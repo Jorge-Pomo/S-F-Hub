@@ -10,6 +10,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Base64;
 import java.util.ResourceBundle;
@@ -54,7 +55,8 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 	@FXML private TextField txtGenero;
 	@FXML private ListView listImg;
 	@FXML private Button Volver;
-
+	@FXML private Label lblRegistro;
+	
 	private String rutaImg;
 	private String nombreImg;
 	
@@ -68,7 +70,7 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 
 	// Registrar Usuario
 	private void resgistrar() {
-
+		
 		String titulo = txtTitulo.getText();
 		Image img = imgSP.getImage();
 		String plataformas = txtPlataformas.getText();
@@ -119,10 +121,13 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 				
 				// Cerramos Conexion
 				conexion.close();
+				
+				lblRegistro.setOpacity(1);
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			
 		}
 
 	}
