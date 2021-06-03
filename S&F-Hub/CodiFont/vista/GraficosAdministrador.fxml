@@ -47,8 +47,8 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <Button fx:id="Salir" layoutX="44.0" layoutY="559.0" mnemonicParsing="false" text="Salir" />
          </children>
       </AnchorPane>
    </children>
 </AnchorPane>
-
