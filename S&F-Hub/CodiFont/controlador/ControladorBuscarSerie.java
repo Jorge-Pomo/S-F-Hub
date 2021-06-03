@@ -12,16 +12,24 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import prue.Person;
 
-public class ControladorBuscarSerie implements Initializable {
+public class ControladorBuscarSerie implements Initializable{
 
 	// Atributos graficos FXML
-	@FXML TableView<ControladorBuscarSerie> tableResuSeries;
-	@FXML TableColumn<ControladorBuscarSerie, String> idTitulo;
-	@FXML TableColumn<ControladorBuscarSerie, String> idEnlace;
+	@FXML private TableView tableResuSeries;
+	@FXML private TableColumn idTitulo;
+	@FXML private TableColumn idEnlace;
+	
+	@FXML private Button btnBuscar;
 	
 	/**
 	 * <h2> Tabla con el resultado de la busqueda sql "Buscar Series"</h2>
@@ -30,33 +38,79 @@ public class ControladorBuscarSerie implements Initializable {
 	 * <p>Nos conectamos a la BBDD</p>
 	 * <p>Mostramos contenido </p>
 	 * */
+
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		String nombreSerie = ControladorInicio.getbSerie();
-		
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
-					"12345678");
-
-			Statement s = conexion.createStatement();
-
-			ResultSet rs = s.executeQuery("SELECT Titulo FROM `catalogo` WHERE titulo LIKE '%" + nombreSerie + "%'");
+	public void initialize(URL location, ResourceBundle resources) {
+		 String nombreSerie = ControladorInicio.getbSerie();
 			
-			Object [] fila = new Object[2];
-			
-			while (rs.next()){
-				TableColumn<ControladorBuscarSerie, String> colNombre = new TableColumn<>("Titulo");
-				System.out.println(rs.getString(1));
-				tableResuSeries.getColumns().addAll(colNombre);
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
+						"12345678");
+
+				Statement s = conexion.createStatement();
+
+				ResultSet rs = s.executeQuery("SELECT Titulo FROM `catalogo` WHERE titulo LIKE '%" + nombreSerie + "%'");
+				
+				Object [] fila = new Object[2];
+				
+				while (rs.next()){
+					
+					System.out.println(rs.getString(1));
+					
+				}
+				
+				// Cerramos Conexion
+				conexion.close();
+			}catch(Exception e){
+				e.printStackTrace();
 			}
-			
-			// Cerramos Conexion
-			conexion.close();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
 		
 	}
+	
+//	 public void start(Stage primaryStage) {
+//
+//		 String nombreSerie = ControladorInicio.getbSerie();
+//			
+//			try {
+//				Class.forName("com.mysql.cj.jdbc.Driver");
+//				Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
+//						"12345678");
+//
+//				Statement s = conexion.createStatement();
+//
+//				ResultSet rs = s.executeQuery("SELECT Titulo FROM `catalogo` WHERE titulo LIKE '%" + nombreSerie + "%'");
+//				
+//				Object [] fila = new Object[2];
+//				
+//				while (rs.next()){
+////					TableColumn<serie, String> idTitulo = new TableColumn<>("Titulo");
+////					idTitulo.setCellValueFactory(new PropertyValueFactory<>("Titulo"));
+////					
+////					TableColumn<Person, String> idEnlace = new TableColumn<>("Enlace");
+////					idEnlace.setCellValueFactory(new PropertyValueFactory<>("enlace"));
+////					
+////					tableResuSeries.getColumns().add(idTitulo);
+////					tableResuSeries.getColumns().add(idEnlace);
+////					
+////					tableResuSeries.getItems().add(new serie(rs.getString(1), "jg")); 
+//					
+//					System.out.println(rs.getString(1));
+//					
+////					VBox vbox = new VBox(tableResuSeries);
+////
+////				    Scene scene = new Scene(vbox);
+////
+////				    primaryStage.setScene(scene);
+////
+////				    primaryStage.show();
+//				}
+//				
+//				// Cerramos Conexion
+//				conexion.close();
+//			}catch(Exception e){
+//				e.printStackTrace();
+//			}
+//	  }
 	
 }
