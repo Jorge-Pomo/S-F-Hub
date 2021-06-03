@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -73,6 +72,6 @@
       </ImageView>
       <Button fx:id="btnVolver" layoutX="690.0" layoutY="40.0" mnemonicParsing="false" text="Volver" />
       <Button fx:id="AñadirALista" layoutX="640.0" layoutY="94.0" mnemonicParsing="false" text="Añadir a MiLista" />
-      <TextField layoutX="288.0" layoutY="15.0" prefHeight="25.0" prefWidth="92.0" text="Bob's Burguer" />
+      <Label layoutX="302.0" layoutY="32.0" text="Bob's Burguer" />
    </children>
 </AnchorPane>
