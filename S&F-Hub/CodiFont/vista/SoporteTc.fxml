@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="controlador.ControladorSoporteTc">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorSoporteTc">
    <children>
-      <Button layoutX="287.0" layoutY="351.0" mnemonicParsing="false" text="Enviar" />
+      <Button fx:id="subirError" layoutX="287.0" layoutY="351.0" mnemonicParsing="false" text="Enviar" />
       <ImageView depthTest="DISABLE" disable="true" fitHeight="109.0" fitWidth="157.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Captura.PNG" />
@@ -29,9 +29,9 @@
             <Font name="Candara Light Italic" size="18.0" />
          </font>
       </Label>
-      <TextArea layoutX="92.0" layoutY="229.0" prefHeight="109.0" prefWidth="240.0" />
-      <TextField layoutX="183.0" layoutY="116.0" text="E-mail" />
-      <TextArea layoutX="391.0" layoutY="143.0" prefHeight="233.0" prefWidth="181.0" />
+      <TextArea fx:id="Texto" layoutX="92.0" layoutY="233.0" prefHeight="109.0" prefWidth="240.0" />
+      <TextField fx:id="Email" layoutX="183.0" layoutY="116.0" text="E-mail" />
+      <TextArea layoutX="391.0" layoutY="141.0" prefHeight="233.0" prefWidth="181.0" />
       <ComboBox layoutX="92.0" layoutY="188.0" prefWidth="150.0" promptText="Problemas" />
       <Button fx:id="btnVolver3" layoutX="484.0" layoutY="45.0" mnemonicParsing="false" text="Volver" />
    </children>
