@@ -17,6 +17,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modelo.Usuario;
 
 public class ControladorLoggin implements Initializable {
 
@@ -29,7 +30,8 @@ public class ControladorLoggin implements Initializable {
 	@FXML private Button btnRegistrarse;
 	@FXML private Label lblError;
 	@FXML private Button EntrarAdmin;
-
+	public Usuario user;
+	public static String nombreUsu;
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> 
 	 * <p>Anidamos cada boton con su metodo</p>
@@ -69,23 +71,39 @@ public class ControladorLoggin implements Initializable {
 
 			Statement s = conexion.createStatement();
 
+			
+			
 			ResultSet rs = s.executeQuery("SELECT nombre, contraseña FROM `usuario` WHERE nombre = '"
 					+ txtUsuario.getText() + "' AND contraseña = '" + contraseña + "'");
+
+			nombreUsu = txtUsuario.getText();
 
 			// Si no hay datos guardados en rs, no se habra podido hacer la consulta
 			if (!rs.isBeforeFirst()) {
 				lblError.setText("El usuario o la contraseña no son validos");
 
 			} else {
-				// Cerramos Conexion
+				
+				rs.next();
+				
+				user = new Usuario();
+					
+				user.getId();
+				
+				
+				// Cerramos Conexvion
 				conexion.close();
-
+				
+				
 				// Ir ventana PyS
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Inicio2.fxml"));
 
 				Parent root = loader.load();
 				Stage stage = (Stage) this.btnIniciarSesion.getScene().getWindow();
 
+				
+				
+				
 				stage.setTitle("S&F Hub -- Registrarse");
 				stage.setScene(new Scene(root));
 				stage.show();
@@ -97,6 +115,8 @@ public class ControladorLoggin implements Initializable {
 
 		
 	}
+
+	
 
 	/**
 	 * @param loader        especificamos done se encuentra la ventana a cargar
