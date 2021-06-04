@@ -103,7 +103,7 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 
 				String cnsulta = "INSERT INTO `catalogo`(`Imagen`, `Titulo`, `plataformas`, `valoracion`, `descripcion`, `genero`, `reparto`, `esSerie`, `esPelicula`, `imgB`) VALUES ('"
 						+ this.rutaImg + "','" + titulo + "','" + plataformas + "','" + valoracion + "','" + sinopsis
-						+ "','" + genero + "','" + reparto + "','" + esSerie + "','" + esPelicula + "','')";
+						+ "','" + genero + "','" + reparto + "','" + esSerie + "','" + esPelicula + "','NULL')";
 				System.out.println(cnsulta);
 				int rs = s.executeUpdate(cnsulta);
 

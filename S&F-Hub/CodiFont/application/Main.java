@@ -11,13 +11,12 @@ public class Main extends Application {
 
 	public void start(Stage primaryStage) {
 
-		
 		/*
 		 * <h2>Cargamos la ventana Loggin como principal al abrir la app.</h2>
 		 * 
 		 */
 		try {
-			String fxml = "vista/Inicio2.fxml";
+			String fxml = "vista/Loggin.fxml";
 
 			// Cargar la ventana
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));

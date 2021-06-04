@@ -30,41 +30,41 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="13.0" layoutY="233.0" text="PLATAFORMAS" />
-      <TextArea layoutX="31.0" layoutY="478.0" prefHeight="15.0" prefWidth="169.0" />
-      <ComboBox layoutX="72.0" layoutY="349.0" prefWidth="150.0" />
-      <CheckBox layoutX="31.0" layoutY="349.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" />
-      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="12.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="15.0" layoutY="288.0" text="PLATAFORMAS" />
+      <TextArea layoutX="33.0" layoutY="533.0" prefHeight="15.0" prefWidth="169.0" />
+      <ComboBox layoutX="74.0" layoutY="404.0" prefWidth="150.0" />
+      <CheckBox layoutX="33.0" layoutY="404.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" />
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="14.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../amazon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="52.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="54.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../apple.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="128.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="130.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../fox.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="87.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="89.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../disney.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="172.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="174.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../hbo.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="257.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="259.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../netflix.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="213.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="215.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../moviestar.png" />
          </image>

@@ -22,19 +22,30 @@ import modelo.Usuario;
 public class ControladorLoggin implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML private Label lblUsuario;
-	@FXML private TextField txtUsuario;
-	@FXML private Label lblContraseña;
-	@FXML private PasswordField passwordContraseña;
-	@FXML private Button btnIniciarSesion;
-	@FXML private Button btnRegistrarse;
-	@FXML private Label lblError;
-	@FXML private Button EntrarAdmin;
+	@FXML
+	private Label lblUsuario;
+	@FXML
+	private TextField txtUsuario;
+	@FXML
+	private Label lblContraseña;
+	@FXML
+	private PasswordField passwordContraseña;
+	@FXML
+	private Button btnIniciarSesion;
+	@FXML
+	private Button btnRegistrarse;
+	@FXML
+	private Label lblError;
+	@FXML
+	private Button EntrarAdmin;
 	public Usuario user;
 	public static String nombreUsu;
+
 	/**
-	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2> 
-	 * <p>Anidamos cada boton con su metodo</p>
+	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2>
+	 * <p>
+	 * Anidamos cada boton con su metodo
+	 * </p>
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -47,17 +58,20 @@ public class ControladorLoggin implements Initializable {
 	/**
 	 * <h2>Boton de iniciarSesion</h2>
 	 * 
-	 * @param contra1 array que contiene la contraseña
+	 * @param contra1    array que contiene la contraseña
 	 * @param contraseña passamos contra1 a String i lo guardamos en contraseña
 	 * 
-	 * <p>Nos conectamos a la BBDD</p>
+	 *                   <p>
+	 *                   Nos conectamos a la BBDD
+	 *                   </p>
 	 * 
 	 * @param rs
-	 * <ul>
-	 * 	<li>Error, el usuario o contraseña no son validos</li>
-	 *	<li>Cerramos la conexion y nos vamos a la pestaña de Inicio</li>
-	 * </ul>
-	 * */
+	 *                   <ul>
+	 *                   <li>Error, el usuario o contraseña no son validos</li>
+	 *                   <li>Cerramos la conexion y nos vamos a la pestaña de
+	 *                   Inicio</li>
+	 *                   </ul>
+	 */
 	// Metodos
 	private void iniciarSesion() {
 
@@ -71,8 +85,6 @@ public class ControladorLoggin implements Initializable {
 
 			Statement s = conexion.createStatement();
 
-			
-			
 			ResultSet rs = s.executeQuery("SELECT nombre, contraseña FROM `usuario` WHERE nombre = '"
 					+ txtUsuario.getText() + "' AND contraseña = '" + contraseña + "'");
 
@@ -83,40 +95,26 @@ public class ControladorLoggin implements Initializable {
 				lblError.setText("El usuario o la contraseña no son validos");
 
 			} else {
-				
-				rs.next();
-				
-				user = new Usuario();
-					
-				user.getId();
-				
-				
+
 				// Cerramos Conexvion
 				conexion.close();
-				
-				
+
 				// Ir ventana PyS
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Inicio2.fxml"));
 
 				Parent root = loader.load();
 				Stage stage = (Stage) this.btnIniciarSesion.getScene().getWindow();
 
-				
-				
-				
 				stage.setTitle("S&F Hub -- Registrarse");
 				stage.setScene(new Scene(root));
 				stage.show();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-	
+
 		}
 
-		
 	}
-
-	
 
 	/**
 	 * @param loader        especificamos done se encuentra la ventana a cargar
@@ -141,12 +139,9 @@ public class ControladorLoggin implements Initializable {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-	
-	private void iniciarAdmin () {
-		
+
+	private void iniciarAdmin() {
+
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Administrador.fxml"));
@@ -157,12 +152,10 @@ public class ControladorLoggin implements Initializable {
 			stage.setTitle("S&F Hub -- Registrarse");
 			stage.setScene(new Scene(root));
 			stage.show();
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		
-	}
+
+		}
 	}
 }
-
-
