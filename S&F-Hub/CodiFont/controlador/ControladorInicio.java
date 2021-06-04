@@ -41,8 +41,8 @@ public class ControladorInicio implements Initializable {
 	@FXML private Button btnAyuda;
 	@FXML private Button Salir;
 
-
 	public static String bSerie;
+	public static int id;
 	
 	//Getters && Setters
 	public static String getbSerie() {
@@ -53,36 +53,45 @@ public class ControladorInicio implements Initializable {
 		this.bSerie = bSerie;
 	}
 	
+	public static int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	// Metodos
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		btnBobs.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP2.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP3.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP4.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP5.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP6.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP7.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP8.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP9.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP10.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP11.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP12.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP13.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP14.setOnMouseClicked((event) -> entrarSerie());
-		btnSyP15.setOnMouseClicked((event) -> entrarSerie());
+		btnBobs.setOnMouseClicked((event) -> entrarSerie(31));
+		btnSyP2.setOnMouseClicked((event) -> entrarSerie(1));
+		btnSyP3.setOnMouseClicked((event) -> entrarSerie(2));
+		btnSyP4.setOnMouseClicked((event) -> entrarSerie(3));
+		btnSyP5.setOnMouseClicked((event) -> entrarSerie(9));
+		btnSyP6.setOnMouseClicked((event) -> entrarSerie(10));
+		btnSyP7.setOnMouseClicked((event) -> entrarSerie(12));
+		btnSyP8.setOnMouseClicked((event) -> entrarSerie(13));
+		btnSyP9.setOnMouseClicked((event) -> entrarSerie(14));
+		btnSyP10.setOnMouseClicked((event) -> entrarSerie(15));
+		btnSyP11.setOnMouseClicked((event) -> entrarSerie(16));
+		btnSyP12.setOnMouseClicked((event) -> entrarSerie(19));
+		btnSyP13.setOnMouseClicked((event) -> entrarSerie(20));
+		btnSyP14.setOnMouseClicked((event) -> entrarSerie(21));
+		btnSyP15.setOnMouseClicked((event) -> entrarSerie(22));
 
 		btnLista.setOnMouseClicked((event) -> crearLista());
 		btnAyuda.setOnMouseClicked((event) -> soporteTecnico());
 
 		btnBuscarSerie.setOnMouseClicked((event) -> buscarSerie());
 		Salir.setOnMouseClicked((event) -> Salir());
-
+		
 	}
 
-	public void entrarSerie() {
+	public void entrarSerie(int num) {
 		try {
-
+			id = num;
+			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PyS.fxml"));
 
 			Parent root = loader.load();
@@ -106,9 +115,13 @@ public class ControladorInicio implements Initializable {
 			stage.setScene(new Scene(root));
 			stage.show();
 
+			System.out.println(num);
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	public void crearLista() {
