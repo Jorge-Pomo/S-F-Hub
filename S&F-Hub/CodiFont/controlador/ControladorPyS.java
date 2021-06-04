@@ -16,6 +16,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -30,6 +32,8 @@ public class ControladorPyS implements Initializable {
 	@FXML private Label lblSinposis;
 	@FXML private Label lblReparto;
 	
+	@FXML private ImageView imgPrincipal;
+	
 	@FXML private Label Titulo;
 	@FXML
 	public void recibirparametros ( String texto) {
@@ -41,6 +45,62 @@ public class ControladorPyS implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		String nombreImg =  "";
+		
+		switch (ControladorInicio.getId()) {
+		case 1:
+			nombreImg = "theMandaloria.jpg";
+			break;
+
+		case 2:
+			nombreImg = "BeavisandButt-Head.jpg";
+			break;
+		case 3:
+			nombreImg = "TheMachinist.jpg";
+			break;
+		case 9:
+			nombreImg = "Shooter.jpg";
+			break;
+		case 10:
+			nombreImg = "TheBlacklist.jpg";
+			break;
+		case 12:
+			nombreImg = "Elseñordelosanillos-comunidaddelanillo.jpg";
+			break;
+		case 13:
+			nombreImg = "Vikingos.jpg";
+			break;
+		case 14:
+			nombreImg = "PeakyBlinders.jpg";
+			break;
+		case 15:
+			nombreImg = "Lacasadepapel.jpg";
+			break;
+		case 16:
+			nombreImg = "Django.jpg";
+			break;
+		case 19:
+			nombreImg = "Lupin.jpg";
+			break;
+		case 20:
+			nombreImg = "TheJoker.jpg";
+			break;
+		case 21:
+			nombreImg = "Narcos.jpg";
+			break;
+		case 22:
+			nombreImg = "Django.jpg";
+			break;
+		case 31:
+			nombreImg = "Bob'sBurguer.jpg";
+			break;
+		}
+		
+		Image image1 = new Image(getClass().getResourceAsStream("../vista/img/" + nombreImg));
+		imgPrincipal.setImage(image1);
+		
+		imgPrincipal.setX(30);
+		imgPrincipal.setY(30);
 		
 		btnVolver.setOnMouseClicked((event) -> Atras());
 		AñadirALista.setOnMouseClicked((event) -> Añadir());
