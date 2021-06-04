@@ -74,17 +74,15 @@ public class ControladorGraficosAdministrador implements Initializable {
 				i++;
 			}
 			
-			//Cnsulta Error
-			ResultSet conErro = s.executeQuery("SELECT descripcion FROM `error`"); 			
+			//Consulta Error
+			ResultSet conErro = s.executeQuery("SELECT descripcion, id_basico FROM `error`"); 			
 			
-			while (rs.next()){
+			while (conErro.next()){
 				
-				System.out.println(rs.getString(1));
-				lvError.getItems().add(rs.getString(1));
+				System.out.println(conErro.getString(1));
+				lvError.getItems().add(conErro.getInt("id_basico") + ": " + conErro.getString("descripcion"));
 			}
-			
-			lvError.getItems().add("hola");
-			
+
 		} catch (Exception e) {
 
 		}
