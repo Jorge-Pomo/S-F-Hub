@@ -23,6 +23,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 public class ControladorGraficosAdministrador implements Initializable {
@@ -35,6 +36,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 	@FXML private Button btnRegistrarSP;
 	@FXML private Button Salir;
 	
+	@FXML private ListView lvError;
 	
 	
 	/**
@@ -72,11 +74,17 @@ public class ControladorGraficosAdministrador implements Initializable {
 				i++;
 			}
 			
-//			for (int j = 0; j < dia.length; j++) {
-//				
-//				System.out.println(dia[j]);
-//			}
-
+			//Cnsulta Error
+			ResultSet conErro = s.executeQuery("SELECT descripcion FROM `error`"); 			
+			
+			while (rs.next()){
+				
+				System.out.println(rs.getString(1));
+				lvError.getItems().add(rs.getString(1));
+			}
+			
+			lvError.getItems().add("hola");
+			
 		} catch (Exception e) {
 
 		}

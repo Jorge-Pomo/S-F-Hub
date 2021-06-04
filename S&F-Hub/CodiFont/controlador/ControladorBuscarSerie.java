@@ -49,7 +49,7 @@ public class ControladorBuscarSerie implements Initializable{
 
 				ResultSet rs = s.executeQuery("SELECT Titulo FROM `catalogo` WHERE titulo LIKE '%" + nombreSerie + "%'");
 				
-				Object [] fila = new Object[2];
+//				Object [] fila = new Object[2];
 				
 				while (rs.next()){
 					

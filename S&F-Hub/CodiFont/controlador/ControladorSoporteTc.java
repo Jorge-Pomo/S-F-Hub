@@ -20,14 +20,11 @@ import modelo.Usuario;
 
 public class ControladorSoporteTc implements Initializable {
 
-	@FXML
-	private Button btnVolver3;
-	@FXML
-	private Button subirError;
-	@FXML
-	private TextArea Texto;
-	@FXML
-	private TextField Email;
+	@FXML private Button btnVolver3;
+	@FXML private Button subirError;
+	@FXML private TextArea Texto;
+	@FXML private TextField Email;
+	
 	public Usuario user;
 
 	@Override
