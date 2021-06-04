@@ -14,6 +14,77 @@
    <children>
       <AnchorPane layoutX="-20.0" layoutY="141.0" prefHeight="687.0" prefWidth="909.0">
          <children>
+            <ImageView fitHeight="132.0" fitWidth="79.0" layoutX="122.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Godzillareydelosmonstruos.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="259.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Lupin.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="118.0" fitWidth="91.0" layoutX="450.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/TheJoker.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="590.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Narcos.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="758.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Django.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="92.0" layoutX="786.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Lacasadepapel.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="424.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Vikingos.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="590.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/PeakyBlinders.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnSyP8" layoutX="415.0" layoutY="213.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <ImageView fitHeight="120.0" fitWidth="101.0" layoutX="287.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Elseñordelosanillos-comunidaddelanillo.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="94.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/TheBlacklist.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="758.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Shooter.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="101.0" layoutX="617.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/TheMachinist.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="424.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/BeavisandButt-Head.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="124.0" fitWidth="101.0" layoutX="276.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/theMandaloria.jpg" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="94.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/Bob'sBurguer.jpg" />
@@ -21,20 +92,19 @@
             </ImageView>
             <ScrollBar layoutX="791.0" orientation="VERTICAL" prefHeight="687.0" prefWidth="14.0" visible="false" />
             <Button fx:id="btnBobs" layoutX="85.0" layoutY="33.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP2" layoutX="250.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP3" layoutX="415.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP4" layoutX="581.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP5" layoutX="749.0" layoutY="33.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP6" layoutX="85.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP7" layoutX="250.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP8" layoutX="415.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP9" layoutX="581.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP10" layoutX="749.0" layoutY="213.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP11" layoutX="85.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP12" layoutX="250.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP13" layoutX="415.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP14" layoutX="581.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
-            <Button fx:id="btnSyP15" layoutX="749.0" layoutY="386.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP2" layoutX="250.0" layoutY="33.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP3" layoutX="415.0" layoutY="33.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP4" layoutX="581.0" layoutY="33.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP5" layoutX="749.0" layoutY="33.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP6" layoutX="85.0" layoutY="213.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP7" layoutX="250.0" layoutY="213.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP9" layoutX="581.0" layoutY="213.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP10" layoutX="749.0" layoutY="213.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP11" layoutX="85.0" layoutY="386.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP12" layoutX="250.0" layoutY="386.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP13" layoutX="415.0" layoutY="386.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP14" layoutX="581.0" layoutY="386.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
+            <Button fx:id="btnSyP15" layoutX="749.0" layoutY="386.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="153.0" text="Button" />
             <Button fx:id="btnAyuda" layoutX="110.0" layoutY="595.0" mnemonicParsing="false" text="Soporte" />
             <Button fx:id="Salir" layoutX="776.0" layoutY="595.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Salir" />
          </children></AnchorPane>

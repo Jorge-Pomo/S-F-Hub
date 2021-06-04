@@ -12,11 +12,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorPyS">
    <children>
-      <ImageView fitHeight="25.0" fitWidth="88.0" layoutX="36.0" layoutY="450.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../455GR.png" />
-         </image>
-      </ImageView>
       <ImageView fx:id="imgPrincipal" fitHeight="171.0" fitWidth="169.0" layoutX="48.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Bob'sBurguer.jpg" />
@@ -27,8 +22,14 @@
             <Font name="DejaVuMathTeXGyre-Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="498.0" layoutY="149.0" text="SINOPSIS" />
-      <Label layoutX="498.0" layoutY="366.0" text="REPARTO" />
+      <Label layoutX="498.0" layoutY="136.0" text="SINOPSIS">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="498.0" layoutY="361.0" text="REPARTO">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
       <Label layoutX="13.0" layoutY="233.0" text="PLATAFORMAS" />
       <TextArea layoutX="31.0" layoutY="478.0" prefHeight="15.0" prefWidth="169.0" />
       <ComboBox layoutX="72.0" layoutY="349.0" prefWidth="150.0" />
@@ -70,18 +71,18 @@
       </ImageView>
       <Button fx:id="btnVolver" layoutX="690.0" layoutY="40.0" mnemonicParsing="false" text="Volver" />
       <Button fx:id="AñadirALista" layoutX="640.0" layoutY="94.0" mnemonicParsing="false" text="Añadir a MiLista" />
-      <Label fx:id="lblTitulo" alignment="CENTER" layoutX="329.0" layoutY="28.0" prefHeight="50.0" prefWidth="162.0" text="Bob's Burguer">
+      <Label fx:id="lblTitulo" alignment="CENTER" layoutX="329.0" layoutY="28.0" prefHeight="50.0" prefWidth="162.0">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label fx:id="lblSinposis" alignment="TOP_LEFT" layoutX="326.0" layoutY="166.0" prefHeight="177.0" prefWidth="394.0" textAlignment="JUSTIFY">
+      <Label fx:id="lblSinposis" alignment="TOP_LEFT" layoutX="339.0" layoutY="159.0" prefHeight="194.0" prefWidth="394.0" textAlignment="JUSTIFY" wrapText="true">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lblReparto" alignment="TOP_LEFT" layoutX="326.0" layoutY="403.0" prefHeight="171.0" prefWidth="394.0" textAlignment="JUSTIFY">
+      <Label fx:id="lblReparto" alignment="TOP_CENTER" layoutX="339.0" layoutY="393.0" prefHeight="171.0" prefWidth="394.0" textAlignment="JUSTIFY">
          <font>
-            <Font size="13.0" />
+            <Font size="15.0" />
          </font>
       </Label>
    </children>
