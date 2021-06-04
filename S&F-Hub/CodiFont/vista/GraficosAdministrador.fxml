@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorGraficosAdministrador">
+<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorGraficosAdministrador">
    <children>
       <AnchorPane layoutX="-19.0" layoutY="22.0" prefHeight="606.0" prefWidth="819.0">
          <children>
@@ -34,12 +34,12 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <BarChart fx:id="grfSeresBuscadas" layoutX="234.0" layoutY="291.0" prefHeight="261.0" prefWidth="509.0">
+            <BarChart fx:id="grfSeresBuscadas" layoutX="234.0" layoutY="291.0" prefHeight="299.0" prefWidth="509.0">
               <xAxis>
-                <CategoryAxis label="Nombre de las Series" side="BOTTOM" fx:id="xAxis" />
+                <CategoryAxis label="Nombre de las Series y Películas" side="BOTTOM" fx:id="xAxis" />
               </xAxis>
               <yAxis>
-                <NumberAxis fx:id="yAxis" label="Numero de usuarios" side="LEFT" />
+                <NumberAxis fx:id="yAxis" label="Numero de busquedas" side="LEFT" />
               </yAxis>
             </BarChart>
             <Button fx:id="btnRegistrarSP" layoutX="44.0" layoutY="409.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="120.0" text="Registrar S/P">
@@ -48,7 +48,7 @@
                </font>
             </Button>
             <Button fx:id="Salir" layoutX="44.0" layoutY="559.0" mnemonicParsing="false" text="Salir" />
-            <ListView fx:id="lvError" layoutX="29.0" layoutY="165.0" prefHeight="232.0" prefWidth="200.0" />
+            <ListView fx:id="lvError" layoutX="29.0" layoutY="165.0" prefHeight="232.0" prefWidth="200.0" style="-fx-background-color: Darkgray;" />
          </children>
       </AnchorPane>
    </children>

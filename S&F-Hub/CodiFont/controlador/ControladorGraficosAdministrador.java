@@ -100,7 +100,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 
 		//Datos Dias
 		XYChart.Series<String, Number> dias = new XYChart.Series<>();
-		dias.setName("Nombre Serie");
+		dias.setName("Usuarios Diarios");
 		dias.getData().addAll(
 				new XYChart.Data<>("Dia 1", dia[0]),
 				new XYChart.Data<>("Dia 2", dia[1]),
@@ -116,39 +116,39 @@ public class ControladorGraficosAdministrador implements Initializable {
 
 
 		//Barchart
-		grfSeresBuscadas.setTitle("Series más buscadas");
+		grfSeresBuscadas.setTitle("Series y películas más buscadas");
 
 		//Datos Semanas
 		XYChart.Series<String, Number> series1 = new XYChart.Series<>();
-		series1.setName("nombre Serie");
+		series1.setName("The blackList");
 		series1.getData().addAll(
 				new XYChart.Data<>("Semana 1", 10),
 				new XYChart.Data<>("Semana 2", 13),
 				new XYChart.Data<>("Semana 3", 97));
 
 		XYChart.Series<String, Number> series2 = new XYChart.Series();
-		series2.setName("America");
+		series2.setName("The Mandalorian");
 		series2.getData().addAll(
 				new XYChart.Data("Semana 1", 31),
 				new XYChart.Data("Semana 2", 15),
 				new XYChart.Data("Semana 3", 91));
 
 		XYChart.Series<String, Number> series3 = new XYChart.Series();
-		series3.setName("Asia");
+		series3.setName("Narcos");
 		series3.getData().addAll(
 				new XYChart.Data("Semana 1", 63),
 				new XYChart.Data("Semana 2", 94),
 				new XYChart.Data("Semana 3", 40));
 
 		XYChart.Series<String, Number> series4 = new XYChart.Series();
-		series4.setName("Europe");
+		series4.setName("Bob's Burguers");
 		series4.getData().addAll(
 				new XYChart.Data("Semana 1", 20),
 				new XYChart.Data("Semana 2", 40),
 				new XYChart.Data("Semana 3", 73));
 
 		XYChart.Series<String, Number> series5 = new XYChart.Series();
-		series5.setName("Oceania");
+		series5.setName("jesuKristo");
 		series5.getData().addAll(
 				new XYChart.Data("Semana 1", 2),
 				new XYChart.Data("Semana 2", 6),
