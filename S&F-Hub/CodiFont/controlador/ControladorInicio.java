@@ -22,7 +22,7 @@ public class ControladorInicio implements Initializable {
 	// Atributos graficos FXML
 	@FXML private TextField txtBuscarSerie;
 	@FXML private Button btnBuscarSerie;
-	@FXML private Button btnSyP;
+	@FXML private Button btnBobs;
 	@FXML private Button btnSyP2;
 	@FXML private Button btnSyP3;
 	@FXML private Button btnSyP4;
@@ -56,7 +56,7 @@ public class ControladorInicio implements Initializable {
 	// Metodos
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		btnSyP.setOnMouseClicked((event) -> entrarSerie());
+		btnBobs.setOnMouseClicked((event) -> entrarSerie());
 		btnSyP2.setOnMouseClicked((event) -> entrarSerie());
 		btnSyP3.setOnMouseClicked((event) -> entrarSerie());
 		btnSyP4.setOnMouseClicked((event) -> entrarSerie());
@@ -86,7 +86,7 @@ public class ControladorInicio implements Initializable {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PyS.fxml"));
 
 			Parent root = loader.load();
-			Stage stage = (Stage) this.btnSyP.getScene().getWindow();
+			Stage stage = (Stage) this.btnBobs.getScene().getWindow();
 			Stage stage2 = (Stage) this.btnSyP2.getScene().getWindow();
 			Stage stage3 = (Stage) this.btnSyP3.getScene().getWindow();
 			Stage stage4 = (Stage) this.btnSyP4.getScene().getWindow();

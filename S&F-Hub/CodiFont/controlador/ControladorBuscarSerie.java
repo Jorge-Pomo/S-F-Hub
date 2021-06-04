@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -25,11 +26,7 @@ import prue.Person;
 public class ControladorBuscarSerie implements Initializable{
 
 	// Atributos graficos FXML
-	@FXML private TableView tableResuSeries;
-	@FXML private TableColumn idTitulo;
-	@FXML private TableColumn idEnlace;
-	
-	@FXML private Button btnBuscar;
+	@FXML private ListView lvSeriesB;
 	
 	/**
 	 * <h2> Tabla con el resultado de la busqueda sql "Buscar Series"</h2>
@@ -57,7 +54,7 @@ public class ControladorBuscarSerie implements Initializable{
 				while (rs.next()){
 					
 					System.out.println(rs.getString(1));
-					
+					lvSeriesB.getItems().add(rs.getString(1));
 				}
 				
 				// Cerramos Conexion
@@ -84,26 +81,26 @@ public class ControladorBuscarSerie implements Initializable{
 //				Object [] fila = new Object[2];
 //				
 //				while (rs.next()){
-////					TableColumn<serie, String> idTitulo = new TableColumn<>("Titulo");
-////					idTitulo.setCellValueFactory(new PropertyValueFactory<>("Titulo"));
-////					
-////					TableColumn<Person, String> idEnlace = new TableColumn<>("Enlace");
-////					idEnlace.setCellValueFactory(new PropertyValueFactory<>("enlace"));
-////					
-////					tableResuSeries.getColumns().add(idTitulo);
-////					tableResuSeries.getColumns().add(idEnlace);
-////					
-////					tableResuSeries.getItems().add(new serie(rs.getString(1), "jg")); 
+//					TableColumn<serie, String> idTitulo = new TableColumn<>("Titulo");
+//					idTitulo.setCellValueFactory(new PropertyValueFactory<>("Titulo"));
+//					
+//					TableColumn<Person, String> idEnlace = new TableColumn<>("Enlace");
+//					idEnlace.setCellValueFactory(new PropertyValueFactory<>("enlace"));
+//					
+//					tableResuSeries.getColumns().add(idTitulo);
+//					tableResuSeries.getColumns().add(idEnlace);
+//					
+//					tableResuSeries.getItems().add(new serie(rs.getString(1), "jg")); 
 //					
 //					System.out.println(rs.getString(1));
 //					
-////					VBox vbox = new VBox(tableResuSeries);
-////
-////				    Scene scene = new Scene(vbox);
-////
-////				    primaryStage.setScene(scene);
-////
-////				    primaryStage.show();
+//					VBox vbox = new VBox(tableResuSeries);
+//
+//				    Scene scene = new Scene(vbox);
+//
+//				    primaryStage.setScene(scene);
+//
+//				    primaryStage.show();
 //				}
 //				
 //				// Cerramos Conexion
