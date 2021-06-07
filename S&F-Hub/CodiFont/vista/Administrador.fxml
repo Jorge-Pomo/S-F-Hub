@@ -48,7 +48,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="lblError" alignment="CENTER" layoutX="322.0" layoutY="530.0" prefHeight="38.0" prefWidth="176.0" />
+      <Label fx:id="lblError" alignment="CENTER" layoutX="239.0" layoutY="531.0" prefHeight="38.0" prefWidth="342.0" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
       <Button fx:id="Usuario" layoutX="735.0" layoutY="556.0" mnemonicParsing="false" text="Usuario">
          <cursor>
             <Cursor fx:constant="HAND" />
