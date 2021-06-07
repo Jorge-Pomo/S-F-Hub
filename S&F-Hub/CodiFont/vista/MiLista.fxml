@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorMiLista">
    <children>
-      <ScrollBar layoutX="776.0" layoutY="56.0" orientation="VERTICAL" prefHeight="447.0" prefWidth="18.0" />
       <Label fx:id="lblNombreLista" layoutX="363.0" layoutY="50.0" prefHeight="32.0" prefWidth="94.0" text="MI LISTA">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="NLista" layoutX="556.0" layoutY="31.0" mnemonicParsing="false" text="Nueva Lista" />
-      <ComboBox layoutX="37.0" layoutY="31.0" prefWidth="150.0" />
-      <Button fx:id="btnVolver2" layoutX="693.0" layoutY="31.0" mnemonicParsing="false" text="Vovlver" />
-      <Button fx:id="Añadir" layoutX="37.0" layoutY="126.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="150.0" text="Añadir S/P" />
+      <Button fx:id="NLista" layoutX="556.0" layoutY="31.0" mnemonicParsing="false" text="Nueva Lista">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ComboBox layoutX="37.0" layoutY="31.0" prefWidth="150.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button fx:id="btnVolver2" layoutX="693.0" layoutY="31.0" mnemonicParsing="false" text="Vovlver">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="Añadir" layoutX="37.0" layoutY="126.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="150.0" text="Añadir S/P">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>

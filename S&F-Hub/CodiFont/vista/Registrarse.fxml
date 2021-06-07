@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -32,15 +33,39 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtUser" layoutX="421.0" layoutY="168.0" promptText="Usuario" />
-            <TextField fx:id="txtEmail" layoutX="421.0" layoutY="223.0" promptText="E-Mail" />
-            <TextField fx:id="txtTelef" layoutX="421.0" layoutY="277.0" promptText="Teléfono" />
-            <PasswordField fx:id="txtContra" layoutX="421.0" layoutY="330.0" />
+            <TextField fx:id="txtUser" layoutX="421.0" layoutY="168.0" promptText="Usuario">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="txtEmail" layoutX="421.0" layoutY="223.0" promptText="E-Mail">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="txtTelef" layoutX="421.0" layoutY="277.0" promptText="Teléfono">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <PasswordField fx:id="txtContra" layoutX="421.0" layoutY="330.0">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></PasswordField>
             <Label layoutX="421.0" layoutY="365.0" prefHeight="13.0" prefWidth="149.0" text="Repetir Contraseña" />
-            <PasswordField fx:id="txtRepetirContra" layoutX="421.0" layoutY="391.0" />
-            <CheckBox fx:id="checkPublicidad" layoutX="421.0" layoutY="440.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="130.0" text="Acepto publicidad" />
-            <CheckBox fx:id="checkPrivacidad" layoutX="421.0" layoutY="471.0" mnemonicParsing="false" text="Política de privacidad" />
-            <Button fx:id="btnRegistrarse" layoutX="218.0" layoutY="424.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="149.0" text="Registrarse" />
+            <PasswordField fx:id="txtRepetirContra" layoutX="421.0" layoutY="391.0">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></PasswordField>
+            <CheckBox fx:id="checkPublicidad" layoutX="421.0" layoutY="440.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="130.0" text="Acepto publicidad">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></CheckBox>
+            <CheckBox fx:id="checkPrivacidad" layoutX="421.0" layoutY="471.0" mnemonicParsing="false" text="Política de privacidad">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></CheckBox>
+            <Button fx:id="btnRegistrarse" layoutX="218.0" layoutY="424.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="149.0" text="Registrarse">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <Label fx:id="lblError" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="144.0" layoutY="514.0" prefHeight="46.0" prefWidth="340.0" textFill="RED">
                <font>
                   <Font size="14.0" />

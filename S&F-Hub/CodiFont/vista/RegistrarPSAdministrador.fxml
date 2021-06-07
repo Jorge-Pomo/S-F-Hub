@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -17,6 +18,9 @@
          <font>
             <Font size="28.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
       <Label contentDisplay="CENTER" layoutX="210.0" layoutY="99.0" prefHeight="42.0" prefWidth="61.0" text="img">
          <font>
@@ -28,19 +32,28 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextArea fx:id="txtPlataformas" layoutX="146.0" layoutY="429.0" prefHeight="25.0" prefWidth="225.0" promptText="Separar por &quot;:&quot;" />
+      <TextArea fx:id="txtPlataformas" layoutX="146.0" layoutY="429.0" prefHeight="25.0" prefWidth="225.0" promptText="Separar por &quot;:&quot;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextArea>
       <Label layoutX="541.0" layoutY="99.0" prefHeight="42.0" prefWidth="109.0" text="Sinopsis">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextArea fx:id="txtSinopsis" layoutX="448.0" layoutY="155.0" prefHeight="106.0" prefWidth="225.0" promptText="Texto Sinopsis" />
+      <TextArea fx:id="txtSinopsis" layoutX="448.0" layoutY="155.0" prefHeight="106.0" prefWidth="225.0" promptText="Texto Sinopsis">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextArea>
       <Label layoutX="561.0" layoutY="261.0" prefHeight="42.0" prefWidth="109.0" text="Reparto">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextArea fx:id="txtReparto" layoutX="448.0" layoutY="313.0" prefHeight="106.0" prefWidth="225.0" />
+      <TextArea fx:id="txtReparto" layoutX="448.0" layoutY="313.0" prefHeight="106.0" prefWidth="225.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextArea>
       <Slider fx:id="slivaloracion" layoutX="167.0" layoutY="523.0" max="10.0" prefHeight="42.0" prefWidth="157.0" value="5.0" />
       <Label layoutX="167.0" layoutY="474.0" prefHeight="50.0" prefWidth="124.0" text="Valoración">
          <font>
@@ -51,27 +64,45 @@
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <CheckBox fx:id="checkSerie" layoutX="30.0" layoutY="488.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="85.0" text="Serie">
          <font>
             <Font size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </CheckBox>
       <CheckBox fx:id="checkPelicula" layoutX="30.0" layoutY="538.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="109.0" text="Pelicula">
          <font>
             <Font size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </CheckBox>
       <Label fx:id="lblError" layoutX="547.0" layoutY="564.0" prefHeight="27.0" prefWidth="157.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtGenero" alignment="TOP_LEFT" layoutX="146.0" layoutY="294.0" prefHeight="85.0" prefWidth="225.0" promptText="genero separado por &quot;:&quot;" />
-      <Button fx:id="btnImg" layoutX="179.0" layoutY="142.0" mnemonicParsing="false" text="Seleccionar img" />
+      <TextField fx:id="txtGenero" alignment="TOP_LEFT" layoutX="146.0" layoutY="294.0" prefHeight="85.0" prefWidth="225.0" promptText="genero separado por &quot;:&quot;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Button fx:id="btnImg" layoutX="179.0" layoutY="142.0" mnemonicParsing="false" text="Seleccionar img">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <ImageView fx:id="imgSP" fitHeight="106.0" fitWidth="141.0" layoutX="159.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
       <ListView fx:id="listImg" layoutX="11.0" layoutY="141.0" prefHeight="42.0" prefWidth="132.0" />
-      <Button fx:id="Volver" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" text="Volver" />
+      <Button fx:id="Volver" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" text="Volver">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Label fx:id="lblRegistro" alignment="CENTER" layoutX="547.0" layoutY="543.0" opacity="0.0" prefHeight="37.0" prefWidth="205.0" text="Registro Exitoso" textFill="#46e450">
          <font>
             <Font size="18.0" />

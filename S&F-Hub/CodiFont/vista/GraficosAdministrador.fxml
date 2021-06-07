@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
@@ -46,8 +47,14 @@
                <font>
                   <Font size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button fx:id="Salir" layoutX="44.0" layoutY="559.0" mnemonicParsing="false" text="Salir" />
+            <Button fx:id="Salir" layoutX="44.0" layoutY="559.0" mnemonicParsing="false" text="Salir">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <ListView fx:id="lvError" layoutX="29.0" layoutY="165.0" prefHeight="232.0" prefWidth="200.0" style="-fx-background-color: Darkgray;" />
          </children>
       </AnchorPane>

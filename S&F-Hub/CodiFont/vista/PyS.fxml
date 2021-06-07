@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -31,9 +32,18 @@
             <Font size="18.0" />
          </font></Label>
       <Label layoutX="15.0" layoutY="288.0" text="PLATAFORMAS" />
-      <TextArea layoutX="33.0" layoutY="533.0" prefHeight="15.0" prefWidth="169.0" />
-      <ComboBox layoutX="74.0" layoutY="404.0" prefWidth="150.0" />
-      <CheckBox layoutX="33.0" layoutY="404.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" />
+      <TextArea layoutX="33.0" layoutY="533.0" prefHeight="15.0" prefWidth="169.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextArea>
+      <ComboBox layoutX="74.0" layoutY="404.0" prefWidth="150.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <CheckBox layoutX="33.0" layoutY="404.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></CheckBox>
       <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="14.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../amazon.png" />
@@ -69,8 +79,14 @@
             <Image url="@../../../../moviestar.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnVolver" layoutX="690.0" layoutY="40.0" mnemonicParsing="false" text="Volver" />
-      <Button fx:id="AñadirALista" layoutX="640.0" layoutY="94.0" mnemonicParsing="false" text="Añadir a MiLista" />
+      <Button fx:id="btnVolver" layoutX="690.0" layoutY="40.0" mnemonicParsing="false" text="Volver">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="AñadirALista" layoutX="640.0" layoutY="94.0" mnemonicParsing="false" text="Añadir a MiLista">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Label fx:id="lblTitulo" alignment="CENTER" layoutX="329.0" layoutY="28.0" prefHeight="50.0" prefWidth="162.0">
          <font>
             <Font size="18.0" />
