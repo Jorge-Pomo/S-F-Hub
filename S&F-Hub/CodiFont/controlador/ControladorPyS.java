@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -34,6 +35,13 @@ public class ControladorPyS implements Initializable {
 		@FXML private Label lblReparto;
 		
 		@FXML private ImageView imgPrincipal;
+		@FXML private ImageView img0;
+		@FXML private ImageView img1;
+		@FXML private ImageView img2;
+		@FXML private ImageView img3;
+		@FXML private ImageView img4;
+		@FXML private ImageView img5;
+		@FXML private ImageView img6;
 		
 		@FXML private Label Titulo;
 		@FXML
@@ -43,7 +51,9 @@ public class ControladorPyS implements Initializable {
 		}
 
 	private String reparto;
-
+	private String plataformas;
+	
+	//Inicializamos las img segun la serie/Pelicula elegida
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		String nombreImg = "";
@@ -105,33 +115,41 @@ public class ControladorPyS implements Initializable {
 
 		btnVolver.setOnMouseClicked((event) -> Atras());
 		AñadirALista.setOnMouseClicked((event) -> Añadir());
-
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
 					"12345678");
 
 			Statement s = conexion.createStatement();
-			ResultSet rs = s.executeQuery("SELECT Titulo, descripcion, reparto FROM `catalogo` WHERE id_catalogo = "
+			ResultSet rs = s.executeQuery("SELECT Titulo, descripcion, reparto, plataformas FROM `catalogo` WHERE id_catalogo = "
 					+ ControladorInicio.getId());
 
 			while (rs.next()) {
 				lblTitulo.setText(rs.getString(1));
 				lblSinposis.setText(rs.getString(2));
 				reparto = rs.getString(3);
+				plataformas = rs.getString(4);
 			}
 
+			//Formato texto -- Label Reparto
 			reparto = reparto.replace("-", " ");
-			reparto = reparto.replace(":", "\n");
+			reparto = reparto.replace(":", ", ");
 
 			lblReparto.setText(reparto);
 
+			//Img Plataformas
+			String[] plataforma = plataformas.split(":");
+			
+			for (int i = 0; i < plataforma.length; i++) {
+				plataforma[i] = plataforma[i].toLowerCase();
+				imgPlataforma(plataforma[i], i);
+			}
+			
 			System.out.println(ControladorInicio.getId());
 
 			while (rs.next()) {
-
 				System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
-
 			}
 
 		} catch (Exception e) {
@@ -175,6 +193,35 @@ public class ControladorPyS implements Initializable {
 			e.printStackTrace();
 		}
 
+	}
+	
+	private void imgPlataforma(String nombrePlataforma, int img) {
+		Image image1 = new Image(getClass().getResourceAsStream("../vista/img/plataformas/" + nombrePlataforma + ".png"));
+		
+		switch (img) {
+		case 0:
+			img0.setImage(image1);
+			break;
+		case 1:
+			img1.setImage(image1);
+			break;
+		case 2:
+			img2.setImage(image1);
+			break;
+		case 3:
+			img3.setImage(image1);
+			break;
+		case 4:
+			img4.setImage(image1);
+			break;
+		case 5:
+			img5.setImage(image1);
+			break;
+		case 6:
+			img6.setImage(image1);
+			break;
+		}
+		
 	}
 
 }
