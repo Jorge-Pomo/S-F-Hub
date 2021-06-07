@@ -1,5 +1,11 @@
 package controlador;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,6 +28,10 @@ import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 import modelo.Usuario;
 
+/**
+ * <h2>Ventana soporte Tecnico</h2>
+ * <p>Ventana donde los usuarios pueden enviar errores o bugs de la app</p>
+ * */
 public class ControladorSoporteTc implements Initializable {
 
 	// Atributos graficos FXML
@@ -66,7 +76,7 @@ public class ControladorSoporteTc implements Initializable {
 			Parent root = loader.load();
 			Stage stage = (Stage) this.btnVolver3.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Soporte");
+			stage.setTitle("S&F Hub -- Peliculas y Series");
 			stage.setScene(new Scene(root));
 			stage.show();
 

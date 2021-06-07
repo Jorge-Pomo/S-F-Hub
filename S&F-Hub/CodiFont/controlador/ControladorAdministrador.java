@@ -1,5 +1,11 @@
 package controlador;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,6 +24,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+ * <h2>Pestaña de login Administrador</h2>
+ * */
 public class ControladorAdministrador implements Initializable {
 
 	// Atributos graficos FXML
@@ -84,8 +93,8 @@ public class ControladorAdministrador implements Initializable {
 					user = rs.getString(1);
 					passwd = rs.getString(2);
 				}
-				
-				if(user.equals("admin") && passwd.equals("admin")) {
+
+				if (user.equals("admin") && passwd.equals("admin")) {
 					// Cerramos Conexion
 					conexion.close();
 
@@ -95,10 +104,10 @@ public class ControladorAdministrador implements Initializable {
 					Parent root = loader.load();
 					Stage stage = (Stage) this.btnIniciar.getScene().getWindow();
 
-					stage.setTitle("S&F Hub -- Registrarse");
+					stage.setTitle("S&F Hub -- Administrador");
 					stage.setScene(new Scene(root));
 					stage.show();
-				}else {
+				} else {
 					lblError.setText("El usuario o la contraseña no son validos");
 				}
 			}
@@ -122,12 +131,12 @@ public class ControladorAdministrador implements Initializable {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
 
 			Parent root = loader.load();
 			Stage stage = (Stage) this.Usuario.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Registrarse");
+			stage.setTitle("S&F Hub -- Login");
 			stage.setScene(new Scene(root));
 			stage.show();
 

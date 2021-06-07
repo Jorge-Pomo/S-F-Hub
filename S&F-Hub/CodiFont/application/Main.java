@@ -1,5 +1,11 @@
 package application;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +22,7 @@ public class Main extends Application {
 		 * 
 		 */
 		try {
-			String fxml = "vista/Loggin.fxml";
+			String fxml = "vista/Login.fxml";
 
 			// Cargar la ventana
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
@@ -28,7 +34,7 @@ public class Main extends Application {
 			primaryStage.getIcons().add(new Image(getClass().getResource("/vista/img/Captura.png").toExternalForm()));
 
 			// Asignar propiedades al Stage
-			primaryStage.setTitle("S&Fhub -- Loggin");
+			primaryStage.setTitle("S&Fhub -- Login");
 			primaryStage.setResizable(false);
 
 			// Asignar la scene y mostrar

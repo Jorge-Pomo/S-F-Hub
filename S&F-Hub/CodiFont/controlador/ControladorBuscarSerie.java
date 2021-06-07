@@ -23,6 +23,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import prue.Person;
 
+/**
+ * <h2>Buscar serie</h2>
+ * <p>pop up con las series encontradas en la BBDD</p>
+ * */
 public class ControladorBuscarSerie implements Initializable{
 
 	// Atributos graficos FXML

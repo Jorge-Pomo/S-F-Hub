@@ -1,5 +1,11 @@
 package controlador;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,6 +23,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * <h2>Ventana Inicio</h2>
+ * <p>Ventana con todas las series y peliculas</p>
+ * */
 public class ControladorInicio implements Initializable {
 
 	// Atributos graficos FXML
@@ -125,7 +135,7 @@ public class ControladorInicio implements Initializable {
 			Stage stage14 = (Stage) this.btnSyP14.getScene().getWindow();
 			Stage stage15 = (Stage) this.btnSyP15.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Serie");
+			stage.setTitle("S&F Hub -- Serie/Pelicula");
 			stage.setScene(new Scene(root));
 			stage.show();
 
@@ -185,7 +195,7 @@ public class ControladorInicio implements Initializable {
 			Parent root = loader.load();
 			Stage stage = (Stage) this.btnAyuda.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Ayuda");
+			stage.setTitle("S&F Hub -- Soporte Tecnico");
 			stage.setScene(new Scene(root));
 			stage.show();
 
@@ -208,7 +218,7 @@ public class ControladorInicio implements Initializable {
 			Parent root = (Parent) loader.load();
 			Stage stage = new Stage();
 
-			stage.setTitle("S&F Hub -- Ayuda");
+			stage.setTitle("S&F Hub -- Buscar Serie");
 			stage.setScene(new Scene(root));
 			stage.show();
 
@@ -233,12 +243,12 @@ public class ControladorInicio implements Initializable {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
 
 			Parent root = loader.load();
 			Stage stage = (Stage) this.Salir.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Ayuda");
+			stage.setTitle("S&F Hub -- Login");
 			stage.setScene(new Scene(root));
 			stage.show();
 

@@ -1,5 +1,11 @@
 package controlador;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
+
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -39,6 +45,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
+/**
+ * <h2>Ventana Regstarar Pelicula o Serie</h2>
+ * <p>Ventana para registarr la pelicula o serie, con su titulo, su sinopsis, plataformas, reparto...</p>
+ * */
 public class ControladorRegistrarPSAdministrador implements Initializable {
 
 	@FXML private TextField txtTitulo;
@@ -172,7 +182,7 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 			Parent root = loader.load();
 			Stage stage = (Stage) this.Volver.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Serie");
+			stage.setTitle("S&F Hub -- Ventana Administrador");
 			stage.setScene(new Scene(root));
 			stage.show();
 

@@ -1,5 +1,10 @@
 package controlador;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
 
 import java.net.URL;
 import java.util.Optional;
@@ -15,6 +20,9 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+/**
+ * <h2>Ventana Mi Lista</h2>
+ * */
 public class ControladorMiLista implements Initializable {
 
 	// Atributos graficos FXML
@@ -62,7 +70,7 @@ public class ControladorMiLista implements Initializable {
 			Stage stage = (Stage) this.btnVolver2.getScene().getWindow();
 			
 
-			stage.setTitle("S&F Hub -- MiLista");
+			stage.setTitle("S&F Hub -- Peliculas y Series");
 			stage.setScene(new Scene(root));
 			stage.show();
 

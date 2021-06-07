@@ -1,5 +1,11 @@
 package controlador;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,6 +25,10 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modelo.Usuario;
 
+/**
+ * <h2>Ventana login</h2>
+ * <p>Ventana de login para usuarios comunes</p>
+ * */
 public class ControladorLogin implements Initializable {
 
 	// Atributos graficos FXML
@@ -98,7 +108,7 @@ public class ControladorLogin implements Initializable {
 				Parent root = loader.load();
 				Stage stage = (Stage) this.btnIniciarSesion.getScene().getWindow();
 
-				stage.setTitle("S&F Hub -- Registrarse");
+				stage.setTitle("S&F Hub -- Peliculas y Series");
 				stage.setScene(new Scene(root));
 				stage.show();
 			}
@@ -152,7 +162,7 @@ public class ControladorLogin implements Initializable {
 			Parent root = loader.load();
 			Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Registrarse");
+			stage.setTitle("S&F Hub -- Login Administrador");
 			stage.setScene(new Scene(root));
 			stage.show();
 

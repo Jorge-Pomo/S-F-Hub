@@ -1,5 +1,11 @@
 package controlador;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,6 +30,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import utilidades.ConectarBBDD;
 
+/**
+ * <h2>Ventana Registrarse</h2>
+ * <p>Ventana para registrarse en la app y en la BBDD</p>
+ * */
 public class ControladorRegistrarse implements Initializable {
 
 	// Atributos graficos FXML
@@ -212,12 +222,12 @@ public class ControladorRegistrarse implements Initializable {
 						// Volver ventana Loggin
 						try {
 
-							FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
+							FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
 
 							Parent root = loader.load();
 							Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow();
 
-							stage.setTitle("S&F Hub -- Loggin");
+							stage.setTitle("S&F Hub -- Login");
 							stage.setScene(new Scene(root));
 							stage.show();
 

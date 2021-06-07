@@ -1,5 +1,11 @@
 package controlador;
 
+/**
+ * @author Jorge, Diego, Fran
+ * 
+ * @versión 1.0.0
+ * */
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,6 +32,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
+/**
+ * <h2>Pesña del Administrador</h2>
+ * 
+ * <p>Pestaña con graficos y los errores enviados por los usuarios</p>
+ * 
+ * */
 public class ControladorGraficosAdministrador implements Initializable {
 
 	// Atributos graficos FXML
@@ -169,7 +181,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 			Parent root = loader.load();
 			Stage stage = (Stage) this.btnRegistrarSP.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Loggin");
+			stage.setTitle("S&F Hub -- Registrar Pelicula/Serie");
 			stage.setScene(new Scene(root));
 			stage.show();
 
@@ -197,7 +209,7 @@ public class ControladorGraficosAdministrador implements Initializable {
 			Parent root = loader.load();
 			Stage stage = (Stage) this.Salir.getScene().getWindow();
 
-			stage.setTitle("S&F Hub -- Serie");
+			stage.setTitle("S&F Hub -- Login Administrador");
 			stage.setScene(new Scene(root));
 			stage.show();
 
