@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -12,9 +13,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 import modelo.Usuario;
 
@@ -24,6 +28,7 @@ public class ControladorSoporteTc implements Initializable {
 	@FXML private Button subirError;
 	@FXML private TextArea Texto;
 	@FXML private TextField Email;
+	@FXML private Label Mensaje;
 	
 	public Usuario user;
 
@@ -52,9 +57,21 @@ public class ControladorSoporteTc implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public void Error() {
 
+		
+		if (Email.getText().equals("") || Texto.getText().equals("")) {
+			
+			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+			alert.setHeaderText(null);
+			alert.setTitle("Error");
+			alert.setContentText("Los campos Email y descripcion no pueden estar vacios");
+			alert.showAndWait();
+
+			
+		}else {
+	
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
@@ -74,10 +91,20 @@ public class ControladorSoporteTc implements Initializable {
 			int rs = s.executeUpdate("INSERT INTO `error`(`Email`, `descripcion`, `id_basico`, `id_admin`) VALUES ('"
 					+ Email.getText() + "','" + Texto.getText() + "'," + idUsu + ",'" + admin + "' )");
 
+			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+			alert.setHeaderText(null);
+			alert.setTitle("Confirmacion");
+			alert.setContentText("El error ha sido enviado correctamente");
+			alert.showAndWait();
+			
+			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }
+}
+
+
+
