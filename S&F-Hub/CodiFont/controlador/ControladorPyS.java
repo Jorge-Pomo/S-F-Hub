@@ -24,29 +24,30 @@ import javafx.stage.Stage;
 
 public class ControladorPyS implements Initializable {
 
-	@FXML private Button btnVolver;
-	@FXML private Button AñadirALista;
-	@FXML private TextField Recibir;
+	// Atributos graficos FXML
+		@FXML private Button btnVolver;
+		@FXML private Button AñadirALista;
+		@FXML private TextField Recibir;
 
-	@FXML private Label lblTitulo;
-	@FXML private Label lblSinposis;
-	@FXML private Label lblReparto;
-	
-	@FXML private ImageView imgPrincipal;
-	
-	@FXML private Label Titulo;
-	@FXML
-	public void recibirparametros ( String texto) {
-	Titulo.setText(texto);	
+		@FXML private Label lblTitulo;
+		@FXML private Label lblSinposis;
+		@FXML private Label lblReparto;
 		
-	}
+		@FXML private ImageView imgPrincipal;
+		
+		@FXML private Label Titulo;
+		@FXML
+		public void recibirparametros ( String texto) {
+		Titulo.setText(texto);	
+			
+		}
 
 	private String reparto;
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		String nombreImg =  "";
-		
+		String nombreImg = "";
+
 		switch (ControladorInicio.getId()) {
 		case 1:
 			nombreImg = "theMandaloria.jpg";
@@ -95,13 +96,13 @@ public class ControladorPyS implements Initializable {
 			nombreImg = "Bob'sBurguer.jpg";
 			break;
 		}
-		
+
 		Image image1 = new Image(getClass().getResourceAsStream("../vista/img/" + nombreImg));
 		imgPrincipal.setImage(image1);
-		
+
 		imgPrincipal.setX(30);
 		imgPrincipal.setY(30);
-		
+
 		btnVolver.setOnMouseClicked((event) -> Atras());
 		AñadirALista.setOnMouseClicked((event) -> Añadir());
 
@@ -111,31 +112,31 @@ public class ControladorPyS implements Initializable {
 					"12345678");
 
 			Statement s = conexion.createStatement();
-			ResultSet rs = s.executeQuery("SELECT Titulo, descripcion, reparto FROM `catalogo` WHERE id_catalogo = " + ControladorInicio.getId());
+			ResultSet rs = s.executeQuery("SELECT Titulo, descripcion, reparto FROM `catalogo` WHERE id_catalogo = "
+					+ ControladorInicio.getId());
 
-			while(rs.next()) {
+			while (rs.next()) {
 				lblTitulo.setText(rs.getString(1));
 				lblSinposis.setText(rs.getString(2));
 				reparto = rs.getString(3);
 			}
-			
+
 			reparto = reparto.replace("-", " ");
 			reparto = reparto.replace(":", "\n");
-			
+
 			lblReparto.setText(reparto);
-			
+
 			System.out.println(ControladorInicio.getId());
-			
-			while (rs.next()){
-				
-				System.out.println (rs.getString(1) + " "+rs.getString(2)+ " "
-				+rs.getString(3));
-				
-				}
-			
+
+			while (rs.next()) {
+
+				System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
+
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
-	
+
 		}
 	}
 

@@ -17,13 +17,10 @@ import javafx.stage.Stage;
 
 public class ControladorMiLista implements Initializable {
 
-	@FXML
-	private Button btnVolver2;
-	@FXML
-	private Button NLista;
-	@FXML
-	private Button Añadir;
-	
+	// Atributos graficos FXML
+	@FXML private Button btnVolver2;
+	@FXML private Button NLista;
+	@FXML private Button Añadir;
 	
 	@FXML private Label lblNombreLista;
 	

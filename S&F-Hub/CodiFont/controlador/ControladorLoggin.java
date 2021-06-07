@@ -22,22 +22,15 @@ import modelo.Usuario;
 public class ControladorLoggin implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML
-	private Label lblUsuario;
-	@FXML
-	private TextField txtUsuario;
-	@FXML
-	private Label lblContraseña;
-	@FXML
-	private PasswordField passwordContraseña;
-	@FXML
-	private Button btnIniciarSesion;
-	@FXML
-	private Button btnRegistrarse;
-	@FXML
-	private Label lblError;
-	@FXML
-	private Button EntrarAdmin;
+	@FXML private Label lblUsuario;
+	@FXML private TextField txtUsuario;
+	@FXML private Label lblContraseña;
+	@FXML private PasswordField passwordContraseña;
+	@FXML private Button btnIniciarSesion;
+	@FXML private Button btnRegistrarse;
+	@FXML private Label lblError;
+	@FXML private Button EntrarAdmin;
+	
 	public Usuario user;
 	public static String nombreUsu;
 

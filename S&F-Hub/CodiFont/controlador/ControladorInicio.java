@@ -20,31 +20,31 @@ import javafx.stage.Stage;
 public class ControladorInicio implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML private TextField txtBuscarSerie;
-	@FXML private Button btnBuscarSerie;
-	@FXML private Button btnBobs;
-	@FXML private Button btnSyP2;
-	@FXML private Button btnSyP3;
-	@FXML private Button btnSyP4;
-	@FXML private Button btnSyP5;
-	@FXML private Button btnSyP6;
-	@FXML private Button btnSyP7;
-	@FXML private Button btnSyP8;
-	@FXML private Button btnSyP9;
-	@FXML private Button btnSyP10;
-	@FXML private Button btnSyP11;
-	@FXML private Button btnSyP12;
-	@FXML private Button btnSyP13;
-	@FXML private Button btnSyP14;
-	@FXML private Button btnSyP15;
-	@FXML private Button btnLista;
-	@FXML private Button btnAyuda;
-	@FXML private Button Salir;
+		@FXML private TextField txtBuscarSerie;
+		@FXML private Button btnBuscarSerie;
+		@FXML private Button btnBobs;
+		@FXML private Button btnSyP2;
+		@FXML private Button btnSyP3;
+		@FXML private Button btnSyP4;
+		@FXML private Button btnSyP5;
+		@FXML private Button btnSyP6;
+		@FXML private Button btnSyP7;
+		@FXML private Button btnSyP8;
+		@FXML private Button btnSyP9;
+		@FXML private Button btnSyP10;
+		@FXML private Button btnSyP11;
+		@FXML private Button btnSyP12;
+		@FXML private Button btnSyP13;
+		@FXML private Button btnSyP14;
+		@FXML private Button btnSyP15;
+		@FXML private Button btnLista;
+		@FXML private Button btnAyuda;
+		@FXML private Button Salir;
 
 	public static String bSerie;
 	public static int id;
-	
-	//Getters && Setters
+
+	// Getters && Setters
 	public static String getbSerie() {
 		return bSerie;
 	}
@@ -52,7 +52,7 @@ public class ControladorInicio implements Initializable {
 	public void setbSerie(String bSerie) {
 		this.bSerie = bSerie;
 	}
-	
+
 	public static int getId() {
 		return id;
 	}
@@ -60,7 +60,7 @@ public class ControladorInicio implements Initializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	// Metodos
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -85,13 +85,13 @@ public class ControladorInicio implements Initializable {
 
 		btnBuscarSerie.setOnMouseClicked((event) -> buscarSerie());
 		Salir.setOnMouseClicked((event) -> Salir());
-		
+
 	}
 
 	public void entrarSerie(int num) {
 		try {
 			id = num;
-			
+
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PyS.fxml"));
 
 			Parent root = loader.load();
@@ -116,12 +116,11 @@ public class ControladorInicio implements Initializable {
 			stage.show();
 
 			System.out.println(num);
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public void crearLista() {
@@ -161,30 +160,31 @@ public class ControladorInicio implements Initializable {
 		}
 
 	}
-	
+
 	public void buscarSerie() {
-		
+
 		setbSerie(txtBuscarSerie.getText());
 		bSerie = txtBuscarSerie.getText();
 		System.out.println(getbSerie());
 		System.out.println();
-		try {			
-			//Abrimos pestaña
+		try {
+			// Abrimos pestaña
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/buscadorSerie.fxml"));
 
-			Parent root = (Parent)loader.load();
-			Stage stage =new Stage();
+			Parent root = (Parent) loader.load();
+			Stage stage = new Stage();
 
 			stage.setTitle("S&F Hub -- Ayuda");
 			stage.setScene(new Scene(root));
 			stage.show();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 
 		}
 
 	}
+
 	public void Salir() {
 
 		try {

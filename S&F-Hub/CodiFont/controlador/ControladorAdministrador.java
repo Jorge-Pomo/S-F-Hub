@@ -21,17 +21,12 @@ import javafx.stage.Stage;
 public class ControladorAdministrador implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML
-	private TextField txtUsuario;
-	@FXML
-	private Button btnIniciar;
-	@FXML
-	private TextField txtContraseña;
-	@FXML
-	private Label lblError;
-	@FXML
-	private Button Usuario;
-	
+	@FXML private TextField txtUsuario;
+	@FXML private Button btnIniciar;
+	@FXML private TextField txtContraseña;
+	@FXML private Label lblError;
+	@FXML private Button Usuario;
+
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2>
 	 * <p>
@@ -101,8 +96,9 @@ public class ControladorAdministrador implements Initializable {
 		}
 
 	}
-private void Usuario () {
-		
+
+	private void Usuario() {
+
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
@@ -113,12 +109,11 @@ private void Usuario () {
 			stage.setTitle("S&F Hub -- Registrarse");
 			stage.setScene(new Scene(root));
 			stage.show();
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		
+
+		}
 	}
-	}
-	
 
 }
