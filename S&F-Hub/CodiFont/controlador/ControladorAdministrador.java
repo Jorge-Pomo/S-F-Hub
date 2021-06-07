@@ -21,12 +21,17 @@ import javafx.stage.Stage;
 public class ControladorAdministrador implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML private TextField txtUsuario;
-	@FXML private Button btnIniciar;
-	@FXML private TextField txtContraseña;
-	@FXML private Label lblError;
-	@FXML private Button Usuario;
-
+	@FXML
+	private TextField txtUsuario;
+	@FXML
+	private Button btnIniciar;
+	@FXML
+	private TextField txtContraseña;
+	@FXML
+	private Label lblError;
+	@FXML
+	private Button Usuario;
+	
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2>
 	 * <p>
@@ -41,10 +46,10 @@ public class ControladorAdministrador implements Initializable {
 	}
 
 	/**
-	 * <h2>Boton de iniciarSesion</h2>
+	 * <h2>Botón de iniciarSesion</h2>
 	 * 
 	 * @param contra1    array que contiene la contraseña
-	 * @param contraseña passamos contra1 a String i lo guardamos en contraseña
+	 * @param contraseña pasamos contra1 a String i lo guardamos en contraseña
 	 * 
 	 *                   <p>
 	 *                   Nos conectamos a la BBDD
@@ -52,8 +57,8 @@ public class ControladorAdministrador implements Initializable {
 	 * 
 	 * @param rs
 	 *                   <ul>
-	 *                   <li>Error, el usuario o contraseña no son validos</li>
-	 *                   <li>Cerramos la conexion y nos vamos a la pestaña de
+	 *                   <li>Error, el usuario o contraseña no son válidos</li>
+	 *                   <li>Cerramos la conexión y nos vamos a la pestaña de
 	 *                   Inicio</li>
 	 *                   </ul>
 	 */
@@ -96,12 +101,23 @@ public class ControladorAdministrador implements Initializable {
 		}
 
 	}
-
-	private void Usuario() {
-
+	
+	/**
+	 * @param loader         especificamos donde se encuentra la ventana a cargar
+	 * 
+	 * @param root           cargamos la ventana
+	 * 
+	 * @param stage          indicamos la funcionalidad del botón, en este caso que
+	 *                       abra la ventana Login
+	 * 
+	 * @param stage.setTitle insertamos el título de la página
+	 */
+	
+private void Usuario () {
+		
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
 
 			Parent root = loader.load();
 			Stage stage = (Stage) this.Usuario.getScene().getWindow();
@@ -109,11 +125,12 @@ public class ControladorAdministrador implements Initializable {
 			stage.setTitle("S&F Hub -- Registrarse");
 			stage.setScene(new Scene(root));
 			stage.show();
-
+		
 		} catch (Exception e) {
 			e.printStackTrace();
-
-		}
+		
 	}
+	}
+	
 
 }

@@ -41,6 +41,8 @@ import javafx.stage.Stage;
 
 public class ControladorRegistrarPSAdministrador implements Initializable {
 
+	// Atributos graficos FXML
+	
 	@FXML private TextField txtTitulo;
 	@FXML private ImageView imgSP;
 	@FXML private Button btnImg;
@@ -153,21 +155,16 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 		this.nombreImg = selectedFile.getAbsolutePath();
 	}
 
-	// private void convertImage() throws IOException{
-	// String dirName="C:\\";
-	// ByteArrayOutputStream baos=new ByteArrayOutputStream(1000);
-	// BufferedImage img=ImageIO.read(new File(dirName,"rose.jpg"));
-	// ImageIO.write(img, "jpg", baos);
-	// baos.flush();
-	//
-	// String base64String=Base64.encode(baos.toByteArray());
-	// baos.close();
-	//
-	// byte[] bytearray = Base64.decode(base64String);
-	//
-	// BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
-	// ImageIO.write(imag, "jpg", new File(dirName,"snap.jpg"));
-	// }
+	/**
+	 * @param loader         especificamos donde se encuentra la ventana a cargar
+	 * 
+	 * @param root           cargamos la ventana
+	 * 
+	 * @param stage          indicamos la funcionalidad del botón, en este caso que
+	 *                       abra la ventana GraficosAdministrador
+	 * 
+	 * @param stage.setTitle insertamos el título de la página
+	 */
 
 	public void volver() {
 

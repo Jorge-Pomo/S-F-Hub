@@ -20,31 +20,32 @@ import javafx.stage.Stage;
 public class ControladorInicio implements Initializable {
 
 	// Atributos graficos FXML
-		@FXML private TextField txtBuscarSerie;
-		@FXML private Button btnBuscarSerie;
-		@FXML private Button btnBobs;
-		@FXML private Button btnSyP2;
-		@FXML private Button btnSyP3;
-		@FXML private Button btnSyP4;
-		@FXML private Button btnSyP5;
-		@FXML private Button btnSyP6;
-		@FXML private Button btnSyP7;
-		@FXML private Button btnSyP8;
-		@FXML private Button btnSyP9;
-		@FXML private Button btnSyP10;
-		@FXML private Button btnSyP11;
-		@FXML private Button btnSyP12;
-		@FXML private Button btnSyP13;
-		@FXML private Button btnSyP14;
-		@FXML private Button btnSyP15;
-		@FXML private Button btnLista;
-		@FXML private Button btnAyuda;
-		@FXML private Button Salir;
+	
+	@FXML private TextField txtBuscarSerie;
+	@FXML private Button btnBuscarSerie;
+	@FXML private Button btnBobs;
+	@FXML private Button btnSyP2;
+	@FXML private Button btnSyP3;
+	@FXML private Button btnSyP4;
+	@FXML private Button btnSyP5;
+	@FXML private Button btnSyP6;
+	@FXML private Button btnSyP7;
+	@FXML private Button btnSyP8;
+	@FXML private Button btnSyP9;
+	@FXML private Button btnSyP10; 
+	@FXML private Button btnSyP11;
+	@FXML private Button btnSyP12;
+	@FXML private Button btnSyP13;
+	@FXML private Button btnSyP14;
+	@FXML private Button btnSyP15;
+	@FXML private Button btnLista;
+	@FXML private Button btnAyuda;
+	@FXML private Button Salir;
 
 	public static String bSerie;
 	public static int id;
-
-	// Getters && Setters
+	
+	//Getters && Setters
 	public static String getbSerie() {
 		return bSerie;
 	}
@@ -52,7 +53,7 @@ public class ControladorInicio implements Initializable {
 	public void setbSerie(String bSerie) {
 		this.bSerie = bSerie;
 	}
-
+	
 	public static int getId() {
 		return id;
 	}
@@ -60,6 +61,13 @@ public class ControladorInicio implements Initializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	/**
+	 * <h2>Configuración de los Botones "EntrarPyS , Lista, Soporte, BuscarSerie y Volver"</h2> 
+	 * 
+	 * anidamos el botón al método
+	 * 
+	 */
 
 	// Metodos
 	@Override
@@ -85,13 +93,22 @@ public class ControladorInicio implements Initializable {
 
 		btnBuscarSerie.setOnMouseClicked((event) -> buscarSerie());
 		Salir.setOnMouseClicked((event) -> Salir());
-
+		
 	}
 
+		/**
+		 * 
+		 * @param num 	     Recoge el id de cada pelicula
+		 * 
+		 * @param stage      Cada uno de los botones para entrar en las serues y las peliculas
+		 * 
+		 */
+	
+	
 	public void entrarSerie(int num) {
 		try {
 			id = num;
-
+			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PyS.fxml"));
 
 			Parent root = loader.load();
@@ -116,13 +133,25 @@ public class ControladorInicio implements Initializable {
 			stage.show();
 
 			System.out.println(num);
-
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 
+	/**
+	 * @param loader         especificamos donde se encuentra la ventana a cargar
+	 * 
+	 * @param root           cargamos la ventana
+	 * 
+	 * @param stage          indicamos la funcionalidad del botón, en este caso que
+	 *                       abra la ventana MiLista
+	 * 
+	 * @param stage.setTitle insertamos el título de la página
+	 */
+	
 	public void crearLista() {
 
 		try {
@@ -142,6 +171,17 @@ public class ControladorInicio implements Initializable {
 
 	}
 
+	/**
+	 * @param loader         especificamos donde se encuentra la ventana a cargar
+	 * 
+	 * @param root           cargamos la ventana
+	 * 
+	 * @param stage          indicamos la funcionalidad del botón, en este caso que
+	 *                       abra la ventana Soporte
+	 * 
+	 * @param stage.setTitle insertamos el título de la página
+	 */
+	
 	public void soporteTecnico() {
 
 		try {
@@ -160,36 +200,47 @@ public class ControladorInicio implements Initializable {
 		}
 
 	}
-
+	
 	public void buscarSerie() {
-
+		
 		setbSerie(txtBuscarSerie.getText());
 		bSerie = txtBuscarSerie.getText();
 		System.out.println(getbSerie());
 		System.out.println();
-		try {
-			// Abrimos pestaña
+		try {			
+			//Abrimos pestaña
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/buscadorSerie.fxml"));
 
-			Parent root = (Parent) loader.load();
-			Stage stage = new Stage();
+			Parent root = (Parent)loader.load();
+			Stage stage =new Stage();
 
 			stage.setTitle("S&F Hub -- Ayuda");
 			stage.setScene(new Scene(root));
 			stage.show();
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 
 		}
 
 	}
-
+	
+	/**
+	 * @param loader         especificamos donde se encuentra la ventana a cargar
+	 * 
+	 * @param root           cargamos la ventana
+	 * 
+	 * @param stage          indicamos la funcionalidad del botón, en este caso que
+	 *                       abra la ventana Login
+	 * 
+	 * @param stage.setTitle insertamos el título de la página
+	 */
+	
 	public void Salir() {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
 
 			Parent root = loader.load();
 			Stage stage = (Stage) this.Salir.getScene().getWindow();

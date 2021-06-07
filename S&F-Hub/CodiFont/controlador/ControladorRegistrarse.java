@@ -55,11 +55,12 @@ public class ControladorRegistrarse implements Initializable {
 	 * <h2>Comprobamos el campo del E-amil</h2>
 	 * 
 	 * @param resu  resultado que devolverá el metodo
-	 * @param email variable donde se guardara el e-mail
+	 * 
+	 * @param email variable donde se guardará el email
 	 * 
 	 *              Si el email contiene un "@" y un "." sera correcto.
 	 * 
-	 * @see Email
+	 * @see email
 	 * 
 	 * @return
 	 *         <ul>
@@ -67,11 +68,11 @@ public class ControladorRegistrarse implements Initializable {
 	 *         <li>El email es incorrecto</li>
 	 *         </ul>
 	 */
-	public boolean comprobarEmail(String comrpobarEmail) {
+	private boolean comprobarEmail() {
 
 		boolean resu = false;
 
-		String email = comrpobarEmail;
+		String email = txtEmail.getText();
 
 		if (email.contains("@") && email.contains(".")) {
 			resu = true;
@@ -83,9 +84,11 @@ public class ControladorRegistrarse implements Initializable {
 	/**
 	 * <h2>Comprobamos el campo Contraseña</h2>
 	 * 
-	 * @param resu      resultado que devolverá el metodo
+	 * @param resu      resultado que devolverá el método
+	 * 
 	 * @param contra1   campo "contraseña"
-	 * @param contraRep campo "Repetri Contraseña"
+	 * 
+	 * @param contraRep campo "Repetir Contraseña"
 	 * 
 	 * @see CharSequence creamos un array de caracteres con la contraseña
 	 * 
@@ -121,6 +124,7 @@ public class ControladorRegistrarse implements Initializable {
 	 * <h2>Comprobamos que el usuario ya esta registrado</h2>
 	 * 
 	 * @param Connection Iniciamos la conexion con la BBDD
+	 * 
 	 * @param Statment   Iniciamos Conexion
 	 * 
 	 * @param rs         Insertamos datos de registro
@@ -159,13 +163,18 @@ public class ControladorRegistrarse implements Initializable {
 	 * 
 	 * @param Connection Iniciamos la conexion con la BBDD, indicando el tipo, la
 	 *                   URL, usuario y contraseña
+	 *                   
 	 * @param Statment   Iniciamos Conexion
+	 * 
 	 * @param contraseña Guardamos la contraseña en tipo String
+	 * 
 	 * @param rs         Insertamos datos de registro
 	 * 
 	 *                  <p> Volvemos a la ventana de Login para poder iniciar sesion
 	 *                   con el usuario ya creado y almacenado en la BBDD</p>
+	 *                   
 	 */
+	
 	public void registrar() {
 
 		if (txtUser.getText().equals("") || txtEmail.getText().equals("") || txtTelef.getText().equals("")
@@ -176,7 +185,7 @@ public class ControladorRegistrarse implements Initializable {
 			if (comprobarRegistro() == false) {
 				lblError.setText("El usuario ya existe");
 			} else {
-				if (comprobarEmail(txtEmail.getText()) == false) {
+				if (comprobarEmail() == false) {
 					lblError.setText("El Email no es correcto");
 				} else {
 					if (comprobarContraseña() == false) {
@@ -212,7 +221,7 @@ public class ControladorRegistrarse implements Initializable {
 						// Volver ventana Loggin
 						try {
 
-							FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
+							FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
 
 							Parent root = loader.load();
 							Stage stage = (Stage) this.btnRegistrarse.getScene().getWindow();
