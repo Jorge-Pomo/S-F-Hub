@@ -17,23 +17,21 @@ import javafx.stage.Stage;
 
 public class ControladorMiLista implements Initializable {
 
-	@FXML
-	private Button btnVolver2;
-	@FXML
-	private Button NLista;
-	@FXML
-	private Button Añadir;
-	
+	// Atributos graficos FXML
+	@FXML private Button btnVolver2;
+	@FXML private Button NLista;
+	@FXML private Button Añadir;
 	
 	@FXML private Label lblNombreLista;
+	
+	 ControladorPyS stage1_controller_enstage2;
 	
 	 /**
 		 * <h2>Configuración de los Botones "Volver y "NuevaLista"</h2>
 		 * <p>
 		 * Anidamos cada botón con su método
 		 * </p>
-		 */
-
+	*/
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
@@ -54,7 +52,6 @@ public class ControladorMiLista implements Initializable {
 	 * 
 	 * @param stage.setTitle insertamos el título de la página
 	 */
-	
 	public void Atras2() {
 		
 		try {
@@ -74,6 +71,13 @@ public class ControladorMiLista implements Initializable {
 		}
 	}
 	
+	public void reciberparametros (ControladorPyS stage1, String texto ) {
+		
+		Añadir.setText(texto);
+		stage1_controller_enstage2=stage1;
+		
+	}
+	
 	/**
 	 * 
 	 * @see Creamos una ventana emergente que nos pida un nombre para la nueva lita
@@ -81,7 +85,6 @@ public class ControladorMiLista implements Initializable {
 	 * @param TextInputDialog  	Crea una ventana emergente 
 	 * 
 	 */
-	
 	private void NuevaLista() {
 		
 		TextInputDialog tid = new TextInputDialog();

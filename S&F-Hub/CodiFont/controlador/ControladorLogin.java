@@ -22,32 +22,24 @@ import modelo.Usuario;
 public class ControladorLogin implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML
-	private Label lblUsuario;
-	@FXML
-	private TextField txtUsuario;
-	@FXML
-	private Label lblContraseña;
-	@FXML
-	private PasswordField passwordContraseña;
-	@FXML
-	private Button btnIniciarSesion;
-	@FXML
-	private Button btnRegistrarse;
-	@FXML
-	private Label lblError;
-	@FXML
-	private Button EntrarAdmin;
+	@FXML private Label lblUsuario;
+	@FXML private TextField txtUsuario;
+	@FXML private Label lblContraseña;
+	@FXML private PasswordField passwordContraseña;
+	@FXML private Button btnIniciarSesion;
+	@FXML private Button btnRegistrarse;
+	@FXML private Label lblError;
+	@FXML private Button EntrarAdmin;
+	
 	public Usuario user;
 	public static String nombreUsu;
 
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2>
 	 * <p>
-	 * Anidamos cada botón con su método
+	 * Anidamos cada boton con su metodo
 	 * </p>
 	 */
-
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -60,8 +52,7 @@ public class ControladorLogin implements Initializable {
 	 * <h2>Boton de iniciarSesion</h2>
 	 * 
 	 * @param contra1    array que contiene la contraseña
-	 * 
-	 * @param contraseña pasamos contra1 a String y lo guardamos en contraseña
+	 * @param contraseña passamos contra1 a String i lo guardamos en contraseña
 	 * 
 	 *                   <p>
 	 *                   Nos conectamos a la BBDD
@@ -69,13 +60,12 @@ public class ControladorLogin implements Initializable {
 	 * 
 	 * @param rs
 	 *                   <ul>
-	 *                   <li>Error, el usuario o contraseña no son válidos</li>
-	 *                   <li>Cerramos la conexión y nos vamos a la pestaña de
+	 *                   <li>Error, el usuario o contraseña no son validos</li>
+	 *                   <li>Cerramos la conexion y nos vamos a la pestaña de
 	 *                   Inicio</li>
 	 *                   </ul>
 	 */
 	// Metodos
-
 	private void iniciarSesion() {
 
 		CharSequence contra1 = passwordContraseña.getCharacters();
@@ -120,16 +110,12 @@ public class ControladorLogin implements Initializable {
 	}
 
 	/**
-	 * @param loader         especificamos donde se encuentra la ventana a cargar
-	 * 
-	 * @param root           cargamos la ventana
-	 * 
-	 * @param stage          indicamos la funcionalidad del botón, en este caso que
-	 *                       no abra otra ventana
-	 * 
-	 * @param stage.setTitle insertamos el título de la página
+	 * @param loader        especificamos done se encuentra la ventana a cargar
+	 * @param root          cargamos la ventana
+	 * @param stage         indicamos la funcionalidad del boton, en este caso que
+	 *                      no abra otr ventana
+	 * @param stage.stTitle insertamos el titulo de la pagina
 	 */
-
 	private void registrarse() {
 		try {
 
@@ -157,7 +143,6 @@ public class ControladorLogin implements Initializable {
 	 * 
 	 * @param stage.setTitle insertamos el título de la página
 	 */
-
 	private void iniciarAdmin() {
 
 		try {

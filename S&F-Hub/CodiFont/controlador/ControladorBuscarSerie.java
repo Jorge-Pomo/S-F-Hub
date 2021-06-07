@@ -29,12 +29,10 @@ public class ControladorBuscarSerie implements Initializable{
 	@FXML private ListView lvSeriesB;
 	
 	/**
-	 * <h2> Tabla con el resultado de la búsqueda sql "Buscar Series"</h2>
+	 * <h2> Tabla con el resultado de la busqueda sql "Buscar Series"</h2>
 	 * @param nombreSerie texto del campo de texto de la ventana Inicio2, contiene el nombre a buscar
 	 * 
 	 * @see Nos conectamos a la BBDD y mostramos los errores
-	 * 
-	 * 
 	 * */
 
 	@Override
@@ -50,6 +48,8 @@ public class ControladorBuscarSerie implements Initializable{
 
 				ResultSet rs = s.executeQuery("SELECT Titulo FROM `catalogo` WHERE titulo LIKE '%" + nombreSerie + "%'");
 				
+//				Object [] fila = new Object[2];
+				
 				while (rs.next()){
 					
 					System.out.println(rs.getString(1));
@@ -63,7 +63,5 @@ public class ControladorBuscarSerie implements Initializable{
 			}
 		
 	}
-	
-
 	
 }

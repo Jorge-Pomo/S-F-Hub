@@ -21,17 +21,12 @@ import javafx.stage.Stage;
 public class ControladorAdministrador implements Initializable {
 
 	// Atributos graficos FXML
-	@FXML
-	private TextField txtUsuario;
-	@FXML
-	private Button btnIniciar;
-	@FXML
-	private TextField txtContraseña;
-	@FXML
-	private Label lblError;
-	@FXML
-	private Button Usuario;
-	
+	@FXML private TextField txtUsuario;
+	@FXML private Button btnIniciar;
+	@FXML private TextField txtContraseña;
+	@FXML private Label lblError;
+	@FXML private Button Usuario;
+
 	/**
 	 * <h2>Configuración de los Botones "Registrarse y "IniciarSesion"</h2>
 	 * <p>
@@ -46,10 +41,10 @@ public class ControladorAdministrador implements Initializable {
 	}
 
 	/**
-	 * <h2>Botón de iniciarSesion</h2>
+	 * <h2>Boton de iniciarSesion</h2>
 	 * 
 	 * @param contra1    array que contiene la contraseña
-	 * @param contraseña pasamos contra1 a String i lo guardamos en contraseña
+	 * @param contraseña passamos contra1 a String i lo guardamos en contraseña
 	 * 
 	 *                   <p>
 	 *                   Nos conectamos a la BBDD
@@ -57,8 +52,8 @@ public class ControladorAdministrador implements Initializable {
 	 * 
 	 * @param rs
 	 *                   <ul>
-	 *                   <li>Error, el usuario o contraseña no son válidos</li>
-	 *                   <li>Cerramos la conexión y nos vamos a la pestaña de
+	 *                   <li>Error, el usuario o contraseña no son validos</li>
+	 *                   <li>Cerramos la conexion y nos vamos a la pestaña de
 	 *                   Inicio</li>
 	 *                   </ul>
 	 */
@@ -83,25 +78,36 @@ public class ControladorAdministrador implements Initializable {
 				lblError.setText("El usuario o la contraseña no son validos");
 
 			} else {
-				// Cerramos Conexion
-				conexion.close();
+				String user = "";
+				String passwd = "";
+				while (rs.next()) {
+					user = rs.getString(1);
+					passwd = rs.getString(2);
+				}
+				
+				if(user.equals("admin") && passwd.equals("admin")) {
+					// Cerramos Conexion
+					conexion.close();
 
-				// Ir ventana PyS
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/GraficosAdministrador.fxml"));
+					// Ir ventana PyS
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/GraficosAdministrador.fxml"));
 
-				Parent root = loader.load();
-				Stage stage = (Stage) this.btnIniciar.getScene().getWindow();
+					Parent root = loader.load();
+					Stage stage = (Stage) this.btnIniciar.getScene().getWindow();
 
-				stage.setTitle("S&F Hub -- Registrarse");
-				stage.setScene(new Scene(root));
-				stage.show();
+					stage.setTitle("S&F Hub -- Registrarse");
+					stage.setScene(new Scene(root));
+					stage.show();
+				}else {
+					lblError.setText("El usuario o la contraseña no son validos");
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	/**
 	 * @param loader         especificamos donde se encuentra la ventana a cargar
 	 * 
@@ -112,12 +118,11 @@ public class ControladorAdministrador implements Initializable {
 	 * 
 	 * @param stage.setTitle insertamos el título de la página
 	 */
-	
-private void Usuario () {
-		
+	private void Usuario() {
+
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Loggin.fxml"));
 
 			Parent root = loader.load();
 			Stage stage = (Stage) this.Usuario.getScene().getWindow();
@@ -125,12 +130,11 @@ private void Usuario () {
 			stage.setTitle("S&F Hub -- Registrarse");
 			stage.setScene(new Scene(root));
 			stage.show();
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		
+
+		}
 	}
-	}
-	
 
 }

@@ -41,8 +41,6 @@ import javafx.stage.Stage;
 
 public class ControladorRegistrarPSAdministrador implements Initializable {
 
-	// Atributos graficos FXML
-	
 	@FXML private TextField txtTitulo;
 	@FXML private ImageView imgSP;
 	@FXML private Button btnImg;
@@ -165,7 +163,6 @@ public class ControladorRegistrarPSAdministrador implements Initializable {
 	 * 
 	 * @param stage.setTitle insertamos el título de la página
 	 */
-
 	public void volver() {
 
 		try {

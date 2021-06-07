@@ -25,12 +25,12 @@ import modelo.Usuario;
 public class ControladorSoporteTc implements Initializable {
 
 	// Atributos graficos FXML
-	
-	@FXML private Button btnVolver3;
-	@FXML private Button subirError;
-	@FXML private TextArea Texto;
-	@FXML private TextField Email;
-	
+		@FXML private Button btnVolver3;
+		@FXML private Button subirError;
+		@FXML private TextArea Texto;
+		@FXML private TextField Email;
+		@FXML private Label Mensaje;
+
 	public Usuario user;
 
 	/**
@@ -39,8 +39,6 @@ public class ControladorSoporteTc implements Initializable {
 	 * Anidamos cada botón con su método
 	 * </p>
 	 */
-
-	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -59,8 +57,6 @@ public class ControladorSoporteTc implements Initializable {
 	 * 
 	 * @param stage.setTitle insertamos el título de la página
 	 */
-	
-	
 	public void Atras3() {
 
 		try {
@@ -78,7 +74,7 @@ public class ControladorSoporteTc implements Initializable {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * <h2>Registramos el error en la BBDD</h2>
 	 * 
@@ -102,56 +98,48 @@ public class ControladorSoporteTc implements Initializable {
 	 *@param alert      Ventana emergente
 	 *                   
 	 */
-	
-	
-	
 	public void Error() {
+		ControladorRegistrarse cont = new ControladorRegistrarse();
 
-		
-		if (Email.getText().equals("") || Texto.getText().equals("")) {
-			
+		if (Email.getText().equals("") || Texto.getText().equals("") || cont.comprobarEmail(Email.getText()) == false) {
+
 			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Error");
-			alert.setContentText("Los campos Email y descripcion no pueden estar vacios");
+			alert.setContentText("Los campos Email y descripcion estan vacios o son erroneos");
 			alert.showAndWait();
 
-			
-		}else {
-	
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
-					"12345678");
+		} else {
 
-			Statement s = conexion.createStatement();
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection conexion = DriverManager.getConnection("jdbc:mysql://54.235.194.103/bd_s&fhub", "Conectar",
+						"12345678");
 
-			int admin = (int) Math.random() * 2 + 1;
+				Statement s = conexion.createStatement();
 
-			ResultSet rs2 = s.executeQuery(
-					"SELECT id_usuario FROM usuario where nombre = '" + ControladorLogin.nombreUsu + "';");
+				int admin = (int) Math.random() * 2 + 1;
 
-			rs2.next();
+				ResultSet rs2 = s.executeQuery(
+						"SELECT id_usuario FROM usuario where nombre = '" + ControladorLogin.nombreUsu + "';");
 
-			int idUsu = rs2.getInt(1);
+				rs2.next();
 
-			int rs = s.executeUpdate("INSERT INTO `error`(`Email`, `descripcion`, `id_basico`, `id_admin`) VALUES ('"
-					+ Email.getText() + "','" + Texto.getText() + "'," + idUsu + ",'" + admin + "' )");
+				int idUsu = rs2.getInt(1);
 
-			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-			alert.setHeaderText(null);
-			alert.setTitle("Confirmacion");
-			alert.setContentText("El error ha sido enviado correctamente");
-			alert.showAndWait();
-			
-			
+				int rs = s
+						.executeUpdate("INSERT INTO `error`(`Email`, `descripcion`, `id_basico`, `id_admin`) VALUES ('"
+								+ Email.getText() + "','" + Texto.getText() + "'," + idUsu + ",'" + admin + "' )");
 
-		} catch (Exception e) {
-			e.printStackTrace();
+				Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+				alert.setHeaderText(null);
+				alert.setTitle("Confirmacion");
+				alert.setContentText("El error ha sido enviado correctamente");
+				alert.showAndWait();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
-}
-
-
-
