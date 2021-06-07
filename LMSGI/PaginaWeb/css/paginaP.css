@@ -104,6 +104,34 @@ margin-left: 23%;
 
 }
 
+.tabla1{
+
+border-collapse: collapse;
+border : 1px solid white;
+text-align: center;
+margin-left: 10%;
+width: 50%;
+font-weight: bold;
+font-size: 15px;
+}
+
+.tabla{
+
+border-collapse: collapse;
+border: 1px solid white;
+text-align: center;
+margin-left: 25%;
+width: 50%;
+
+}
+.linkdescargar {
+	text-decoration: none;
+	color: #E50914;
+}
+.linkdescargar:hover {
+	color: white;
+}
+
 /* ---- ----- ----- Pelicula Principal ----- ----- ----- */
 .pelicula-principal {
 	font-size: 16px;
