@@ -67,11 +67,11 @@ public class ControladorRegistrarse implements Initializable {
 	 *         <li>El email es incorrecto</li>
 	 *         </ul>
 	 */
-	private boolean comprobarEmail() {
+	public boolean comprobarEmail(String comrpobarEmail) {
 
 		boolean resu = false;
 
-		String email = txtEmail.getText();
+		String email = comrpobarEmail;
 
 		if (email.contains("@") && email.contains(".")) {
 			resu = true;
@@ -176,7 +176,7 @@ public class ControladorRegistrarse implements Initializable {
 			if (comprobarRegistro() == false) {
 				lblError.setText("El usuario ya existe");
 			} else {
-				if (comprobarEmail() == false) {
+				if (comprobarEmail(txtEmail.getText()) == false) {
 					lblError.setText("El Email no es correcto");
 				} else {
 					if (comprobarContraseña() == false) {

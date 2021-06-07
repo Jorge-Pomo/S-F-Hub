@@ -59,14 +59,14 @@ public class ControladorSoporteTc implements Initializable {
 	}
 	
 	public void Error() {
-
+		ControladorRegistrarse cont = new ControladorRegistrarse();
 		
-		if (Email.getText().equals("") || Texto.getText().equals("")) {
+		if (Email.getText().equals("") || Texto.getText().equals("") || cont.comprobarEmail(Email.getText()) == false) {
 			
 			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Error");
-			alert.setContentText("Los campos Email y descripcion no pueden estar vacios");
+			alert.setContentText("Los campos Email y descripcion estan vacios o son erroneos");
 			alert.showAndWait();
 
 			
