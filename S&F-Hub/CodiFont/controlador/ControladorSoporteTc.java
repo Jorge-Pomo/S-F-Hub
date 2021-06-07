@@ -24,14 +24,23 @@ import modelo.Usuario;
 
 public class ControladorSoporteTc implements Initializable {
 
+	// Atributos graficos FXML
+	
 	@FXML private Button btnVolver3;
 	@FXML private Button subirError;
 	@FXML private TextArea Texto;
 	@FXML private TextField Email;
-	@FXML private Label Mensaje;
 	
 	public Usuario user;
 
+	/**
+	 * <h2>Configuración de los Botones "Volver y "EnviarError"</h2>
+	 * <p>
+	 * Anidamos cada botón con su método
+	 * </p>
+	 */
+
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -40,6 +49,18 @@ public class ControladorSoporteTc implements Initializable {
 
 	}
 
+	/**
+	 * @param loader         especificamos donde se encuentra la ventana a cargar
+	 * 
+	 * @param root           cargamos la ventana
+	 * 
+	 * @param stage          indicamos la funcionalidad del botón, en este caso que
+	 *                       abra la ventana Inicio
+	 * 
+	 * @param stage.setTitle insertamos el título de la página
+	 */
+	
+	
 	public void Atras3() {
 
 		try {
@@ -58,15 +79,41 @@ public class ControladorSoporteTc implements Initializable {
 		}
 	}
 	
+	/**
+	 * <h2>Registramos el error en la BBDD</h2>
+	 * 
+	 * 
+	 * @see Comprobamos que los campos Email y descripción no estan vacios, en ese caso saldrá 
+	 * una ventana emergente que lo indique 
+	 * 
+	 * 
+	 * 
+	 * @param Connection Iniciamos la conexion con la BBDD, indicando el Email y la descripcion del error
+	 *                   
+	 * @param Statment   Iniciamos Conexion
+	 * 
+	 * @param contraseña Guardamos la contraseña en tipo String
+	 * 
+	 * @param rs         Insertamos datos de registro
+	 * 
+	 *                  <p> Volvemos a la ventana de Login para poder iniciar sesion
+	 *                   con el usuario ya creado y almacenado en la BBDD</p>
+	 *                   
+	 *@param alert      Ventana emergente
+	 *                   
+	 */
+	
+	
+	
 	public void Error() {
-		ControladorRegistrarse cont = new ControladorRegistrarse();
+
 		
-		if (Email.getText().equals("") || Texto.getText().equals("") || cont.comprobarEmail(Email.getText()) == false) {
+		if (Email.getText().equals("") || Texto.getText().equals("")) {
 			
 			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Error");
-			alert.setContentText("Los campos Email y descripcion estan vacios o son erroneos");
+			alert.setContentText("Los campos Email y descripcion no pueden estar vacios");
 			alert.showAndWait();
 
 			
@@ -82,7 +129,7 @@ public class ControladorSoporteTc implements Initializable {
 			int admin = (int) Math.random() * 2 + 1;
 
 			ResultSet rs2 = s.executeQuery(
-					"SELECT id_usuario FROM usuario where nombre = '" + ControladorLoggin.nombreUsu + "';");
+					"SELECT id_usuario FROM usuario where nombre = '" + ControladorLogin.nombreUsu + "';");
 
 			rs2.next();
 
