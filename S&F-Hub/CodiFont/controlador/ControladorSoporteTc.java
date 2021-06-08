@@ -137,8 +137,7 @@ public class ControladorSoporteTc implements Initializable {
 
 				int idUsu = rs2.getInt(1);
 
-				int rs = s
-						.executeUpdate("INSERT INTO `error`(`Email`, `descripcion`, `id_basico`, `id_admin`) VALUES ('"
+				int rs = s.executeUpdate("INSERT INTO `error`(`Email`, `descripcion`, `id_basico`, `id_admin`) VALUES ('"
 								+ Email.getText() + "','" + Texto.getText() + "'," + idUsu + ",'" + admin + "' )");
 
 				Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
